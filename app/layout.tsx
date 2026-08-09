@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../app/globals.css';
+import PageLoader from '../components/PageLoader/PageLoader';
 import companyData from '../data/company.json';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -68,7 +69,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <PageLoader />
+        {children}
+      </body>
     </html>
   );
 }

@@ -8,8 +8,8 @@ import clientsData from '../data/clients.json';
 import testimonialsData from '../data/testimonials.json';
 import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
-import OurTeam from '../components/OurTeam/OurTeam';
 import About from '../components/About/About';
+import HowWeWork from '../components/HowWeWork/HowWeWork';
 import OurWork from '../components/OurWork/OurWork';
 import Projects from '../components/Projects/Projects';
 import Equipment from '../components/Equipment/Equipment';
@@ -40,8 +40,8 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero company={companyData} />
-        <OurTeam team={teamData} />
         <About company={companyData} />
+        <HowWeWork />
         <OurWork services={servicesData} />
         <Projects projects={projectsData} />
         <Equipment equipment={equipmentData} />

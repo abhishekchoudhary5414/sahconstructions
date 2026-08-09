@@ -1,74 +1,303 @@
 .about {
-  background: #fff;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  background: #f8fafc;
+  overflow: hidden;
+  padding: 4.5rem 0 3.5rem;
 }
 
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.02);
+  pointer-events: none;
+}
+
+.bgIcons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgIcon {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.12);
+  width: 6rem !important;
+  height: 6rem !important;
+  animation: floatIcon 7s ease-in-out infinite;
+}
+
+.bgIconOne { top: 8%; left: 4%; --icon-rotation: -12deg; animation-delay: 0s; }
+.bgIconTwo { top: 14%; right: 6%; --icon-rotation: 12deg; animation-delay: 1.2s; }
+.bgIconThree { bottom: 12%; left: 10%; --icon-rotation: 8deg; animation-delay: 2.4s; }
+.bgIconFour { bottom: 8%; right: 10%; --icon-rotation: -16deg; animation-delay: 3.6s; }
+
 .inner {
-  max-width: 1160px;
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 2rem;
-  align-items: center;
+  padding: 0 1.25rem;
+}
+
+.headerBlock {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 2.4rem;
+  padding-top: 0.25rem;
 }
 
 .label {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.8rem;
   color: var(--primary-color);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
-.inner h2 {
-  margin: 0 0 1.25rem;
-  color: var(--secondary-color);
-  font-size: clamp(2rem, 3vw, 2.8rem);
-}
-
-.inner p {
+.headerBlock h2 {
   margin: 0 0 1rem;
+  color: var(--secondary-color);
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0;
   color: var(--muted-color);
   line-height: 1.85;
+  font-size: 1rem;
 }
 
-.stats {
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.mediaCard,
+.storyCard,
+.profileCard,
+.stat {
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.mediaCard {
+  padding: 1rem;
   display: grid;
   gap: 1rem;
 }
 
-.stat {
-  padding: 1.5rem;
+.imagePlaceholder {
+  min-height: 320px;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  background: #eef4ff;
+  color: var(--secondary-color);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(15,23,42,0.16);
+}
+
+.imagePlaceholder .image {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.profileCard {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #f8fbff;
+}
+
+.profileIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.profileCard h3 {
+  margin: 0 0 0.25rem;
+  color: var(--secondary-color);
+}
+
+.profileCard p {
+  margin: 0 0 0.35rem;
+  color: var(--muted-color);
+}
+
+.sideColumn {
+  display: grid;
+  gap: 1rem;
+}
+
+.storyCard,
+.infoCard,
+.valuesCard {
+  padding: 1.2rem 1.25rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #f7fafc;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.storyCard h3,
+.infoCard h3,
+.valuesCard h3 {
+  margin: 0 0 0.5rem;
+  color: var(--secondary-color);
+}
+
+.storyCard p,
+.infoCard p,
+.valuesCard p {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.8;
+}
+
+.bottomSection {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+  margin-top: 0.6rem;
+}
+
+.valuesGrid > div {
+  padding: 0.8rem;
+  border-radius: 0.9rem;
+  background: #f8fbff;
+}
+
+.valuesGrid strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--secondary-color);
+}
+
+.stats {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.stat {
+  padding: 1rem 1.1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem 0.9rem;
+  align-items: center;
+}
+
+.statIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 10%, white);
 }
 
 .stat strong {
   display: block;
-  font-size: 2rem;
+  font-size: 1.15rem;
   color: var(--secondary-color);
-  margin-bottom: 0.5rem;
+  grid-column: 2;
 }
 
 .stat span {
   color: var(--muted-color);
+  grid-column: 2;
 }
 
-@media (max-width: 860px) {
-  .inner {
+.links {
+  display: flex;
+  margin-top: 0.2rem;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.links a:hover {
+  background: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--icon-rotation, 0deg));
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(calc(var(--icon-rotation, 0deg) + 2deg));
+  }
+}
+
+@media (max-width: 920px) {
+  .contentGrid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 620px) {
   .about {
-    padding: 0;
+    padding: 3rem 0 2.5rem;
   }
 
   .inner {
-    padding: 2rem 1rem;
+    padding: 0 1rem;
+  }
+
+  .headerBlock {
+    margin-bottom: 1.8rem;
+  }
+
+  .mediaCard {
+    padding: 0.8rem;
+  }
+
+  .imagePlaceholder {
+    min-height: 240px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
   }
 }

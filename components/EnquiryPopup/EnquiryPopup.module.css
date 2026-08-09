@@ -165,9 +165,221 @@
     line-height: 1.7;
 }
 
+.pageShell {
+    min-height: calc(100vh - 8rem);
+    padding: 2rem 1rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(212, 85, 0, 0.08), rgba(15, 23, 42, 0.03));
+}
+
+.pageCard {
+    width: min(100%, 1180px);
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+    backdrop-filter: blur(16px);
+    box-sizing: border-box;
+}
+
+.pageIntro {
+    padding: clamp(1.25rem, 2.2vw, 2rem);
+    border-radius: 24px;
+    background: linear-gradient(145deg, var(--secondary-color), #1f2937);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.label {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.pageIntro h1 {
+    margin: 0;
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.08;
+}
+
+.pageIntro .description {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.infoList {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.infoItem strong {
+    display: block;
+    margin-bottom: 0.16rem;
+    font-size: 0.94rem;
+}
+
+.infoItem span {
+    display: block;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.infoIcon {
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(212, 85, 0, 0.2);
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.pageFormPanel {
+    padding: 0.5rem;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fffaf3 100%);
+    min-width: 0;
+}
+
+.pageFormPanel .form {
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.pageFormPanel .heading {
+    text-align: left;
+}
+
 @media (max-width: 1024px) {
     .form {
         padding: 2rem 1.6rem;
+    }
+
+    .pageShell {
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .pageCard {
+        grid-template-columns: 1fr;
+        width: min(100%, 1180px);
+    }
+}
+
+@media (max-width: 767px) {
+    .pageShell {
+        min-height: auto;
+        padding: 0.8rem 0.35rem 2rem;
+        align-items: stretch;
+    }
+
+    .pageCard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0.75rem;
+        border-radius: 22px;
+    }
+
+    .pageIntro {
+        padding: 1.15rem;
+        border-radius: 18px;
+    }
+
+    .pageIntro h1 {
+        font-size: clamp(1.92rem, 8vw, 2.2rem);
+        line-height: 1.13;
+    }
+
+    .pageIntro .description {
+        font-size: 0.94rem;
+        line-height: 1.58;
+    }
+
+    .infoList {
+        gap: 0.75rem;
+    }
+
+    .infoItem {
+        padding: 0.78rem 0.85rem;
+    }
+
+    .infoItem span {
+        font-size: 0.88rem;
+    }
+
+    .pageFormPanel {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.25rem;
+        border-radius: 18px;
+    }
+
+    .pageFormPanel .form {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.9rem 0.35rem;
+    }
+
+    .header {
+        margin-top: 0.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .heading {
+        font-size: clamp(1.4rem, 6vw, 1.88rem);
+        line-height: 1.12;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .fieldGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fieldLabel {
+        font-size: 0.88rem;
+    }
+
+    .fieldInput,
+    .fieldSelect {
+        width: 100%;
+        min-height: 2.9rem;
+        padding: 0.88rem 0.95rem;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+    }
+
+    .submit {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -198,6 +410,40 @@
 
     .submit {
         width: 100%;
+    }
+
+    .pageShell {
+        padding: 0.75rem 0.45rem 2rem;
+        align-items: stretch;
+    }
+
+    .pageCard {
+        padding: 0.65rem;
+        border-radius: 20px;
+    }
+
+    .pageIntro {
+        padding: 1rem;
+    }
+
+    .pageFormPanel {
+        padding: 0.15rem;
+    }
+
+    .pageFormPanel .form {
+        padding: 0.75rem 0.2rem;
+    }
+
+    .fieldInput,
+    .fieldSelect {
+        min-height: 2.88rem;
+        padding: 0.88rem 0.9rem;
+        font-size: 0.94rem;
+    }
+
+    .submit {
+        padding: 0.9rem 1rem;
+        font-size: 0.94rem;
     }
 }
 

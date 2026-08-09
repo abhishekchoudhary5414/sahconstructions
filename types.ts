@@ -12,7 +12,10 @@ export interface HeroContent {
   cta: string;
 }
 
+import type { ReactNode } from 'react';
+
 export interface Company {
+  owner: ReactNode;
   name: string;
   description: string;
   website: string;

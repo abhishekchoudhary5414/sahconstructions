@@ -1,0 +1,225 @@
+.howWeWork {
+  position: relative;
+  background: #f8fafc;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 4.5rem 0 3.5rem;
+}
+
+.howWeWork::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.02);
+  pointer-events: none;
+}
+
+.bgIcons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgIcon {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.12);
+  width: 6rem !important;
+  height: 6rem !important;
+  animation: floatIcon 7s ease-in-out infinite;
+}
+
+.bgIconOne { top: 8%; left: 4%; --icon-rotation: -12deg; animation-delay: 0s; }
+.bgIconTwo { top: 16%; right: 6%; --icon-rotation: 12deg; animation-delay: 1.2s; }
+.bgIconThree { bottom: 14%; left: 10%; --icon-rotation: 8deg; animation-delay: 2.4s; }
+.bgIconFour { bottom: 8%; right: 10%; --icon-rotation: -16deg; animation-delay: 3.6s; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.headerBlock {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 2.4rem;
+}
+
+.label {
+  margin: 0 0 0.8rem;
+  color: var(--primary-color);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.headerBlock h2 {
+  margin: 0 0 1rem;
+  color: var(--secondary-color);
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stepCard {
+  position: relative;
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeUp 0.7s ease both;
+}
+
+.stepCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.1);
+}
+
+.stepIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), #f07a2d);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary-color) 12%, white);
+  color: var(--primary-color);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.stepCard h3 {
+  margin: 0 0 0.6rem;
+  color: var(--secondary-color);
+  font-size: 1.05rem;
+}
+
+.stepCard p {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.75;
+}
+
+.highlightCard {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.highlightLabel {
+  margin: 0 0 0.35rem;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.highlightCard h3 {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.highlightLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.1rem;
+  border-radius: 999px;
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.highlightLink:hover {
+  background: var(--primary-color);
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--icon-rotation, 0deg));
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(calc(var(--icon-rotation, 0deg) + 2deg));
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .howWeWork {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .inner {
+    padding: 0 1rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlightCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

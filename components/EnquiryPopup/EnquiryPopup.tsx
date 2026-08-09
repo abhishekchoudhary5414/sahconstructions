@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from 'react';
 import styles from './EnquiryPopup.module.css';
-import companyData from '../../data/company.json';
+import EnquiryForm from './EnquiryForm';
 
 const serviceOptions = ['Residential Construction', 'Commercial Developments', 'Infrastructure Solutions'];
 
@@ -58,66 +58,17 @@ export default function EnquiryPopup() {
         </button>
 
         <div className={styles.body}>
-          <form className={styles.form} onSubmit={handleSubmit} noValidate>
-            <div className={styles.header}>
-              <h2 className={styles.heading}>
-                Enquire with <span className={styles.accent}>{companyData.name}</span>
-              </h2>
-              <p className={styles.description}>
-                Submit your details and our team will reach out quickly to discuss your construction requirements.
-              </p>
-            </div>
-            {submitted ? (
-              <div className={styles.success}>
-                <p>Thanks for reaching out! Our team will contact you soon to discuss your service enquiry.</p>
-              </div>
-            ) : (
-              <>
-                <div className={styles.fieldGrid}>
-                  <label className={styles.fieldLabel}>
-                    Full Name
-                    <input
-                      className={styles.fieldInput}
-                      value={name}
-                      onChange={(event) => setName(event.target.value)}
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                    />
-                    {errors.name && <span className={styles.error}>{errors.name}</span>}
-                  </label>
-
-                  <label className={styles.fieldLabel}>
-                    Phone Number
-                    <input
-                      className={styles.fieldInput}
-                      value={phone}
-                      onChange={(event) => setPhone(event.target.value)}
-                      type="tel"
-                      name="phone"
-                      placeholder="Enter your phone"
-                    />
-                    {errors.phone && <span className={styles.error}>{errors.phone}</span>}
-                  </label>
-                </div>
-
-                <label className={styles.fieldLabel}>
-                  Service Type
-                  <select
-                    className={styles.fieldSelect}
-                    value={service}
-                    onChange={(event) => setService(event.target.value)}
-                  >
-                    {serviceOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                </label>
-
-                <button type="submit" className={styles.submit}>Submit Enquiry</button>
-              </>
-            )}
-          </form>
+          <EnquiryForm
+            name={name}
+            phone={phone}
+            service={service}
+            submitted={submitted}
+            errors={errors}
+            onNameChange={setName}
+            onPhoneChange={setPhone}
+            onServiceChange={setService}
+            onSubmit={handleSubmit}
+          />
         </div>
       </div>
     </div>

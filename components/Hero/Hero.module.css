@@ -239,6 +239,90 @@
   border-radius: 50%;
 }
 
+/* Animations: floating icons, rotating ring, pulsing dots, subtle line motion */
+@keyframes floatUpDown {
+  0% { transform: translateY(0) translateZ(0); }
+  50% { transform: translateY(-8px) translateZ(0); }
+  100% { transform: translateY(0) translateZ(0); }
+}
+
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.18); opacity: .9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideGlow {
+  0% { transform: translateX(0); opacity: .9; }
+  50% { transform: translateX(6px); opacity: .7; }
+  100% { transform: translateX(0); opacity: .9; }
+}
+
+@keyframes rotateSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.centerRing {
+  animation: ringRotate 28s linear infinite;
+  transform-origin: center center;
+}
+
+.iconTile,
+.iconTileSecondary,
+.iconTileTertiary,
+.iconTileQuaternary {
+  will-change: transform;
+  animation-name: floatUpDown;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.iconTile { animation-duration: 4.6s; animation-delay: 0s; }
+.iconTileSecondary { animation-duration: 3.8s; animation-delay: 0.25s; }
+.iconTileTertiary { animation-duration: 5.2s; animation-delay: 0.12s; }
+.iconTileQuaternary { animation-duration: 4.2s; animation-delay: 0.32s; }
+
+.dotOne, .dotTwo {
+  animation: pulseScale 3.4s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.lineOne, .lineTwo {
+  animation: slideGlow 3.6s ease-in-out infinite, rotateSlow 18s linear infinite;
+  transform-origin: center center;
+}
+
+.lineTwo {
+  /* rotate opposite direction for subtle counter motion */
+  animation: slideGlow 3.6s ease-in-out infinite, rotateReverse 22s linear infinite;
+}
+
+/* reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .centerRing,
+  .iconTile,
+  .iconTileSecondary,
+  .iconTileTertiary,
+  .iconTileQuaternary,
+  .dotOne,
+  .dotTwo,
+  .lineOne,
+  .lineTwo {
+    animation: none !important;
+  }
+}
+
 .iconTile,
 .iconTileSecondary,
 .iconTileTertiary,

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import CallIcon from '@mui/icons-material/Call';
 import companyData from '../../data/company.json';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
@@ -11,6 +12,7 @@ import Image from 'next/image';
 const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
+    { href: '/how-we-work', label: 'How We Work' },
     { href: '#services', label: 'Services' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' }
@@ -88,7 +90,8 @@ export default function Navbar() {
                     href={phoneHref}
                     aria-label={`Call ${companyData.name}`}
                 >
-                    Call Now
+                    <CallIcon fontSize="small" />
+                    <span>Call Now</span>
                 </a>
                 <a
                     className={styles.whatsappFixed}
@@ -98,7 +101,7 @@ export default function Navbar() {
                     aria-label="Chat on WhatsApp"
                 >
                     <WhatsAppIcon fontSize="small" />
-                    WhatsApp
+                    <span>WhatsApp</span>
                 </a>
             </div>
         </>

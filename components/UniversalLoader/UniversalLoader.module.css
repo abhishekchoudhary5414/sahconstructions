@@ -1,0 +1,165 @@
+.loaderShell {
+  min-height: 40vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.loaderShell.compact {
+  min-height: auto;
+  padding: 1rem;
+}
+
+.loaderPanel {
+  width: min(100%, 460px);
+  padding: 2rem 1.5rem;
+  border-radius: 28px;
+  border: 1px solid rgba(30, 41, 59, 0.08);
+  background: linear-gradient(180deg, #fffdf9 0%, #fff8ef 100%);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.iconOrbit {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  display: grid;
+  place-items: center;
+}
+
+.iconOrbit::before,
+.iconOrbit::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 85, 0, 0.28);
+}
+
+.iconOrbit::after {
+  inset: -22px;
+  border-color: rgba(30, 41, 59, 0.15);
+}
+
+.iconRing {
+  width: 104px;
+  height: 104px;
+  border-radius: 999px;
+  border: 2px solid var(--primary-color);
+  display: grid;
+  place-items: center;
+  position: relative;
+  animation: pulseRing 1.55s ease-in-out infinite;
+}
+
+.primaryIcon {
+  color: var(--primary-color);
+}
+
+.secondaryIcon {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid #fff;
+}
+
+.loaderText {
+  text-align: center;
+}
+
+.loaderText h3 {
+  margin: 0.25rem 0 0.2rem;
+  color: var(--secondary-color);
+  font-size: clamp(1.45rem, 3.1vw, 2rem);
+  line-height: 1.04;
+}
+
+.loaderText p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.91rem;
+}
+
+.loaderEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.loaderEyebrow::before,
+.loaderEyebrow::after {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background: var(--primary-color);
+}
+
+.loadingBar {
+  width: min(100%, 270px);
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(30, 41, 59, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(30, 41, 59, 0.08);
+}
+
+.loadingFill {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary-color), #f7b84b);
+  animation: loadingFill 1.25s ease-in-out infinite;
+}
+
+@keyframes loadingFill {
+  50% {
+    transform: translateX(160%);
+    width: 58%;
+  }
+}
+
+@keyframes pulseRing {
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@media (max-width: 640px) {
+  .loaderShell {
+    min-height: 38vh;
+    padding: 1rem 0.5rem;
+  }
+
+  .loaderPanel {
+    padding: 1.65rem 1rem;
+    border-radius: 22px;
+  }
+
+  .iconOrbit {
+    width: 104px;
+    height: 104px;
+  }
+
+  .iconRing {
+    width: 88px;
+    height: 88px;
+  }
+
+  .loaderText h3 {
+    font-size: 1.76rem;
+  }
+}
