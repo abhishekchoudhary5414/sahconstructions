@@ -53,9 +53,9 @@ export default function Hero({ company }: HeroProps) {
             <button
               type="button"
               className={styles.secondaryCta}
-              onClick={() => (window.location.href = '/services')}
+              onClick={() => (window.location.href = '/works')}
             >
-              Services
+              Our Work
             </button>
           </div>
         </div>

@@ -6,6 +6,7 @@ import equipmentData from '../data/equipment.json';
 import teamData from '../data/team.json';
 import clientsData from '../data/clients.json';
 import testimonialsData from '../data/testimonials.json';
+import blogsData from '../data/blogs.json';
 import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
@@ -15,6 +16,7 @@ import Projects from '../components/Projects/Projects';
 import Equipment from '../components/Equipment/Equipment';
 import Clients from '../components/Clients/Clients';
 import Testimonials from '../components/Testimonials/Testimonials';
+import BlogSection from '../components/BlogSection/BlogSection';
 import Contact from '../components/Contact/Contact';
 import EnquiryPopup from '../components/EnquiryPopup/EnquiryPopup';
 import Footer from '../components/Footer/Footer';
@@ -47,6 +49,7 @@ export default function HomePage() {
         <Equipment equipment={equipmentData} />
         <Clients clients={clientsData} />
         <Testimonials testimonials={testimonialsData} />
+        <BlogSection posts={blogsData.slice(0, 3)} />
         <Contact company={companyData} />
       </main>
       <Footer />
