@@ -16,6 +16,7 @@ type EnquiryFormProps = {
   onPhoneChange: (value: string) => void;
   onServiceChange: (value: string) => void;
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  loading?: boolean;
 };
 
 export default function EnquiryForm({
@@ -27,7 +28,8 @@ export default function EnquiryForm({
   onNameChange,
   onPhoneChange,
   onServiceChange,
-  onSubmit
+  onSubmit,
+  loading = false
 }: EnquiryFormProps) {
   return (
     <form className={styles.form} onSubmit={onSubmit} noValidate>
@@ -56,6 +58,10 @@ export default function EnquiryForm({
                 type="text"
                 name="name"
                 placeholder="Enter your name"
+                inputMode="text"
+                pattern="[A-Za-z\s]+"
+                title="Only letters and spaces are allowed"
+                required
               />
               {errors.name && <span className={styles.error}>{errors.name}</span>}
             </label>
@@ -68,7 +74,12 @@ export default function EnquiryForm({
                 onChange={(event) => onPhoneChange(event.target.value)}
                 type="tel"
                 name="phone"
-                placeholder="Enter your phone"
+                placeholder="+91 70180 09352"
+                inputMode="tel"
+                maxLength={14}
+                pattern="\+?[0-9]{1,13}"
+                title="Phone may include digits and an optional leading +, maximum 14 chars"
+                required
               />
               {errors.phone && <span className={styles.error}>{errors.phone}</span>}
             </label>
@@ -87,7 +98,9 @@ export default function EnquiryForm({
             </select>
           </label>
 
-          <button type="submit" className={styles.submit}>Submit Enquiry</button>
+          <button type="submit" className={styles.submit} disabled={loading} aria-busy={loading}>
+            {loading ? 'Submitting…' : 'Submit Enquiry'}
+          </button>
         </>
       )}
     </form>

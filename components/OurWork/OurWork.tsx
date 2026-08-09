@@ -5,6 +5,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import CompanyData from '../../data/company.json';
+import WhatsAppLink from '../Shared/WhatsAppLink';
 
 interface OurWorkProps {
   works: Work[];
@@ -58,7 +59,7 @@ export default function OurWork({ works }: OurWorkProps) {
 
                     <div className={styles.ctaRow}>
                       <a className={styles.primaryCta} href="/enquiry">Enquiry Now</a>
-                      <a className={styles.whatsappCta} href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+                      <WhatsAppLink className={styles.whatsappCta} href={whatsappUrl} ariaLabel="WhatsApp">WhatsApp</WhatsAppLink>
                       <a className={styles.viewCta} href={`/works/${work.slug}`}>View</a>
                     </div>
                   </div>

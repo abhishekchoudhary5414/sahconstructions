@@ -10,6 +10,7 @@ import companyData from '../../../data/company.json';
 import projectsData from '../../../data/projects.json';
 import Navbar from '../../../components/Navbar/Navbar';
 import Footer from '../../../components/Footer/Footer';
+import WhatsAppLink from '../../../components/Shared/WhatsAppLink';
 import styles from './ProjectDetail.module.css';
 
 interface PageProps {
@@ -92,9 +93,9 @@ export default function ProjectDetail({ params }: PageProps) {
 
               <div className={styles.ctaRow}>
                 <a className={styles.primaryCta} href="/enquiry">Enquiry Now</a>
-                <a className={styles.whatsappCta} href={whatsappUrl} target="_blank" rel="noreferrer">
+                <WhatsAppLink className={styles.whatsappCta} href={whatsappUrl} ariaLabel="WhatsApp">
                   WhatsApp
-                </a>
+                </WhatsAppLink>
               </div>
 
               <article className={styles.copyPanel}>

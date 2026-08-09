@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import companyData from '../../data/company.json';
 import styles from './ContactPage.module.css';
+import Contact from '../../components/Contact/Contact';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Contact | SAH Constructions',
@@ -12,28 +15,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div>
-          <p className={styles.label}>Contact</p>
-          <h1>Speak with our construction team.</h1>
-          <p>Reach SAH Constructions for planning your next residential, commercial or infrastructure project.</p>
-        </div>
-      </section>
-      <section className={styles.contactCards}>
-        <article className={styles.card}>
-          <h2>Office</h2>
-          <p>{companyData.address.street}, {companyData.address.city}, {companyData.address.region}</p>
-        </article>
-        <article className={styles.card}>
-          <h2>Phone</h2>
-          <p>{companyData.phone}</p>
-        </article>
-        <article className={styles.card}>
-          <h2>Email</h2>
-          <p>{companyData.email}</p>
-        </article>
-      </section>
-    </main>
+    <>
+      <Navbar />
+      <main className={styles.page}>
+        <Contact company={companyData} />
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import WhatsAppLink from '../../components/Shared/WhatsAppLink';
 import CallIcon from '@mui/icons-material/Call';
+import CallLink from '../../components/Shared/CallLink';
 import companyData from '../../data/company.json';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
@@ -15,7 +17,7 @@ const navLinks = [
     { href: '/how-we-work', label: 'How We Work' },
     { href: '/works', label: 'Our Work' },
     { href: '/projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' }
+    { href: '/contact', label: 'Contact' }
 ];
 
 const normalizeDigits = (phone: string) => phone.replace(/\D/g, '');
@@ -61,16 +63,16 @@ export default function Navbar() {
                                 </a>
                             ))}
                         </div>
-                        <a className={styles.ctaLinkMobile} href={phoneHref} onClick={() => setOpen(false)}>
+                        <CallLink className={styles.ctaLinkMobile} href={phoneHref} ariaLabel={`Call ${companyData.name}`}>
                             Call Now
-                        </a>
+                        </CallLink>
                     </nav>
 
                     <div>
                         <div className={styles.actions}>
-                            <a className={styles.ctaLink} href={phoneHref} aria-label={`Call ${companyData.name}`}>
+                            <CallLink className={styles.ctaLink} href={phoneHref} ariaLabel={`Call ${companyData.name}`}>
                                 Call Now
-                            </a>
+                            </CallLink>
                             <button
                                 type="button"
                                 className={styles.toggle}
@@ -85,24 +87,22 @@ export default function Navbar() {
                 </div>
             </header>
             <div className={styles.floatingActions}>
-                <a
+                <CallLink
                     className={styles.callFixed}
                     href={phoneHref}
-                    aria-label={`Call ${companyData.name}`}
+                    ariaLabel={`Call ${companyData.name}`}
                 >
                     <CallIcon fontSize="small" />
                     <span>Call Now</span>
-                </a>
-                <a
+                </CallLink>
+                <WhatsAppLink
                     className={styles.whatsappFixed}
                     href={whatsappHref}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label="Chat on WhatsApp"
+                    ariaLabel="Chat on WhatsApp"
                 >
                     <WhatsAppIcon fontSize="small" />
                     <span>WhatsApp</span>
-                </a>
+                </WhatsAppLink>
             </div>
         </>
     );

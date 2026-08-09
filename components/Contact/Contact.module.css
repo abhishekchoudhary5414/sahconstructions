@@ -1,8 +1,16 @@
 .section {
   position: relative;
-  background: #fff;
-  border-top: 1px solid var(--border);
+  background: #f8fafc;
   overflow: hidden;
+  padding: 4.5rem 0 3.5rem;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.02);
+  pointer-events: none;
 }
 
 .bgIcons {
@@ -14,10 +22,10 @@
 
 .bgIcon {
   position: absolute;
-  color: rgba(59, 130, 246, 0.08);
-  width: 5.5rem !important;
-  height: 5.5rem !important;
-  animation: floatIcon 8s ease-in-out infinite;
+  color: rgba(59, 130, 246, 0.12);
+  width: 6rem !important;
+  height: 6rem !important;
+  animation: floatIcon 7s ease-in-out infinite;
 }
 
 .bgIconOne { top: 8%; left: 4%; --icon-rotation: -12deg; animation-delay: 0s; }
@@ -36,28 +44,32 @@
   z-index: 1;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 0 1.25rem;
 }
 
 .headerBlock {
   text-align: center;
   max-width: 860px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.4rem;
+  padding-top: 0.25rem;
 }
 
 .label {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.8rem;
   color: var(--primary-color);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .headerBlock h2 {
   margin: 0 0 1rem;
   color: var(--secondary-color);
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  line-height: 1.1;
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .lead {
@@ -139,6 +151,23 @@
   background: #fff;
   color: var(--secondary-color);
   font: inherit;
+}
+
+.error {
+  display: block;
+  margin-top: 0.45rem;
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.success {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border-radius: 0.6rem;
+  font-weight: 700;
 }
 
 .field textarea {

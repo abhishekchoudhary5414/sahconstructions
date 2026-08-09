@@ -1,6 +1,6 @@
-'use client';
+ 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import type { Company } from '../../types';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -19,6 +19,9 @@ export default function Contact({ company }: ContactProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({ name: '', phone: '' });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
 
   const handleNameChange = (value: string) => {
     const filtered = value.replace(/[^a-zA-Z\s]/g, '');
@@ -26,17 +29,59 @@ export default function Contact({ company }: ContactProps) {
   };
 
   const handlePhoneChange = (value: string) => {
-    const filtered = value.replace(/[^0-9+]/g, '');
+    let filtered = value.replace(/[^0-9+]/g, '');
+    if (filtered.indexOf('+') > 0) filtered = filtered.replace(/\+/g, '');
+    if (filtered.startsWith('+')) {
+      filtered = '+' + filtered.slice(1).replace(/\+/g, '');
+    } else {
+      filtered = filtered.replace(/\+/g, '');
+    }
     setPhone(filtered.slice(0, 14));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const isPhoneValid = (value: string) => /^\+?[0-9]{1,13}$/.test(value.trim());
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Replace with your real submission logic.
-    console.log('Contact request', { name, phone, message });
-    setName('');
-    setPhone('');
-    setMessage('');
+    const nextErrors = { name: '', phone: '' };
+    if (!name.trim()) nextErrors.name = 'Name is required.';
+    if (!phone.trim()) nextErrors.phone = 'Phone number is required.';
+    if (nextErrors.name || nextErrors.phone) {
+      setErrors(nextErrors);
+      return;
+    }
+
+    if (!isPhoneValid(phone)) {
+      setErrors({ name: '', phone: 'Phone may include + and digits only, maximum 14 chars.' });
+      return;
+    }
+
+    setErrors({ name: '', phone: '' });
+    setSuccess('');
+    setLoading(true);
+
+    const payload = { name, phone, message };
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        setName('');
+        setPhone('');
+        setMessage('');
+        setSuccess('Thanks — your message has been received. We will contact you shortly.');
+      } else {
+        const errorData = await response.json();
+        alert(errorData.error || 'Unable to save your contact request. Please try again later.');
+      }
+    } catch (e) {
+      alert('Network error. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -97,8 +142,11 @@ export default function Contact({ company }: ContactProps) {
                 value={name}
                 onChange={(event) => handleNameChange(event.target.value)}
                 placeholder="Enter your name"
+                pattern="[A-Za-z\s]+"
+                title="Only letters and spaces are allowed"
                 required
               />
+              {errors.name && <span className={styles.error}>{errors.name}</span>}
             </div>
 
             <div className={styles.field}>
@@ -110,10 +158,13 @@ export default function Contact({ company }: ContactProps) {
                 inputMode="tel"
                 value={phone}
                 onChange={(event) => handlePhoneChange(event.target.value)}
-                placeholder="+91 98765 43210"
+                placeholder="+91 70180 09352"
                 maxLength={14}
+                pattern="\+?[0-9]{1,13}"
+                title="Phone may include + and digits only, maximum 14 chars"
                 required
               />
+              {errors.phone && <span className={styles.error}>{errors.phone}</span>}
             </div>
 
             <div className={styles.field}>
@@ -129,9 +180,10 @@ export default function Contact({ company }: ContactProps) {
               />
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Send message
+            <button type="submit" className={styles.submitButton} disabled={loading} aria-busy={loading}>
+              {loading ? 'Sending…' : 'Send message'}
             </button>
+            {success && <div className={styles.success}>{success}</div>}
           </form>
         </div>
 

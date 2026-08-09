@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CallLink from '../../components/Shared/CallLink';
 import companyData from '../../data/company.json';
 import styles from './Footer.module.css';
 
@@ -61,7 +62,9 @@ export default function Footer() {
           <div className={styles.linkColumn}>
             <p className={styles.groupLabel}>Contact</p>
             <div className={styles.contactInfo}>
-              <a href={`tel:${companyData.phone}`} className={styles.link}>{companyData.phone}</a>
+              <CallLink href={`tel:${companyData.phone}`} className={styles.link} ariaLabel={`Call ${companyData.name}`}>
+                {companyData.phone}
+              </CallLink>
               <a href={`mailto:${companyData.email}`} className={styles.link}>{companyData.email}</a>
             </div>
           </div>

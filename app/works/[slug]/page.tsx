@@ -9,6 +9,7 @@ import worksData from '../../../data/works.json';
 import { cities } from '../../../data/cities';
 import Navbar from '../../../components/Navbar/Navbar';
 import Footer from '../../../components/Footer/Footer';
+import WhatsAppLink from '../../../components/Shared/WhatsAppLink';
 import styles from './WorkDetail.module.css';
 
 interface PageProps {
@@ -114,9 +115,9 @@ export default function WorkDetail({ params }: PageProps) {
 
               <div className={styles.ctaRow}>
                 <a className={styles.primaryCta} href="/enquiry">Enquiry Now</a>
-                <a className={styles.whatsappCta} href={whatsappUrl} target="_blank" rel="noreferrer">
+                <WhatsAppLink className={styles.whatsappCta} href={whatsappUrl} ariaLabel="WhatsApp">
                   WhatsApp
-                </a>
+                </WhatsAppLink>
                 <a className={styles.secondaryCta} href={work.cta.readMore}>View</a>
               </div>
 

@@ -8,6 +8,7 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import type { Project } from '../../types';
 import companyData from '../../data/company.json';
 import styles from './Projects.module.css';
+import WhatsAppLink from '../Shared/WhatsAppLink';
 
 interface ProjectsProps {
   projects: Project[];
@@ -92,16 +93,15 @@ export default function Projects({ projects, showLoadMore = true }: ProjectsProp
               </div>
               <div className={styles.cardFooter}>
                 <a className={styles.link} href={`/projects/${project.slug}`}>View project</a>
-                <a
+                <WhatsAppLink
                   className={styles.whatsappLink}
                   href={`https://wa.me/${companyData.phone.replace(/\D/g, '')}?text=${encodeURIComponent(
                     `Hello SAH Constructions, I am interested in the ${project.title}. Please share pricing and availability details.`
                   )}`}
-                  target="_blank"
-                  rel="noreferrer"
+                  ariaLabel="WhatsApp enquiry"
                 >
                   WhatsApp enquiry
-                </a>
+                </WhatsAppLink>
                 <a className={styles.secondaryLink} href={`/enquiry?project=${encodeURIComponent(project.title)}`}>
                   Enquiry now
                 </a>
