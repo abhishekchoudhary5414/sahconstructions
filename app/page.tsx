@@ -22,18 +22,118 @@ import EnquiryPopup from '../components/EnquiryPopup/EnquiryPopup';
 import Footer from '../components/Footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'SAH Constructions | Premium Construction Services',
-  description: companyData.description,
-  openGraph: {
-    title: 'SAH Constructions | Premium Construction Services',
-    description: companyData.description,
-    url: 'https://www.sahconstructions.com',
-    siteName: companyData.name,
-    type: 'website'
-  },
+  title:
+    'SAH Constructions | Warehouse Construction | Commercial Construction | Residential Construction | Renovation | Project Management | Painiting Work',
+
+  description:
+    'SAH Constructions is a professional construction company providing residential, commercial, industrial and civil construction services, project management, architectural design, structural design and infrastructure development.',
+
+  keywords: [
+    'SAH Constructions',
+    'construction company',
+    'construction company in India',
+    'civil construction company',
+    'civil construction services',
+    'building construction company',
+    'construction services',
+    'residential construction',
+    'residential construction company',
+    'commercial construction',
+    'commercial construction company',
+    'industrial construction',
+    'infrastructure construction',
+    'building contractor',
+    'civil contractor',
+    'construction contractor',
+    'general contractor',
+    'turnkey construction',
+    'turnkey construction services',
+    'construction project management',
+    'project management services',
+    'EPC contractor',
+    'EPCM services',
+    'architectural design',
+    'architectural planning',
+    'structural design',
+    'structural engineering',
+    '3D visualization',
+    '3D architectural visualization',
+    'construction planning',
+    'construction management',
+    'renovation and remodeling',
+    'building renovation',
+    'painting work',
+  ],
+
+  authors: [
+    {
+      name: 'SAH Constructions',
+    },
+  ],
+
+  creator: 'SAH Constructions',
+  publisher: 'SAH Constructions',
+
+  metadataBase: new URL('https://www.sahconstructions.com'),
+
   alternates: {
-    canonical: 'https://www.sahconstructions.com'
-  }
+    canonical: 'https://www.sahconstructions.com',
+  },
+
+  openGraph: {
+    title:
+      'SAH Constructions | Construction Company & Civil Construction Services',
+
+    description:
+      'Professional residential, commercial, industrial and civil construction services by SAH Constructions, including project management, architectural design, structural design, infrastructure and turnkey construction.',
+
+    url: 'https://www.sahconstructions.com',
+
+    siteName: 'SAH Constructions',
+
+    type: 'website',
+
+    locale: 'en_IN',
+
+    images: [
+      {
+        url: '/logo/circlelogo.png',
+        width: 512,
+        height: 512,
+        alt: 'SAH Constructions - Construction Company',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+
+    title:
+      'SAH Constructions | Construction Company & Civil Construction Services',
+
+    description:
+      'Residential, commercial, industrial and civil construction services with project management, architectural and structural design solutions.',
+
+    images: ['/logo/circlelogo.png'],
+  },
+
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/logo/circlelogo.png',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 };
 
 export default function HomePage() {
