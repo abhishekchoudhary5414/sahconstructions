@@ -123,8 +123,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    // Add these after obtaining them from Google Search Console/Bing
-    // google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    google: 't6VunOvlpIxQfvYGA51JdIAYLClSJjZhPsbimUhCtd0',
     // other: {
     //   'msvalidate.01': 'YOUR_BING_VERIFICATION_CODE',
     // },
