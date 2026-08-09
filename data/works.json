@@ -4,7 +4,7 @@
     "title": "Warehouse Construction",
     "summary": "Building high-performance warehouses optimized for logistics, storage, and operational efficiency.",
     "description": "Warehouse Construction is designed to create logistics-ready, high-performance assets that support fast operations and dependable service capacity.",
-    "image": "https://sahconstructions.com/assets/work/commercial.png",
+    "image": "/work/warehouseconstruction.png",
     "features": [
       "30+ Warehouses Built",
       "13+ Years in Industrial Construction",
@@ -25,7 +25,7 @@
     "title": "Commercial Construction",
     "summary": "Designing and constructing commercial spaces that elevate business functionality and brand presence.",
     "description": "Commercial Construction brings together planning, delivery, and fit-out coordination for spaces that support business growth and performance.",
-    "image": "https://sahconstructions.com/assets/work/commercial.png",
+    "image": "/work/commercialconstruction.png",
     "features": [
       "20+ Commercial Projects",
       "13+ Years in Business",
@@ -46,7 +46,7 @@
     "title": "Residential Construction",
     "summary": "Crafting homes that blend comfort, style, and sustainability for modern living.",
     "description": "Residential Construction creates future-ready homes through coordinated planning, disciplined execution, and strong finish quality.",
-    "image": "https://sahconstructions.com/assets/work/resedential.png",
+    "image": "/work/resedentialconstruction.png",
     "features": [
       "15+ Homes Delivered",
       "13+ Years in Residential Design",
@@ -67,7 +67,7 @@
     "title": "Project Management",
     "summary": "End-to-end construction project management ensuring timely delivery and budget control.",
     "description": "Project Management provides disciplined coordination, schedule control, cost visibility, and risk management for complex delivery journeys.",
-    "image": "https://sahconstructions.com/assets/work/Management.png",
+    "image": "/work/projectmanagement.png",
     "features": [
       "11+ Projects Managed",
       "13+ Certified PM Experts",
@@ -88,7 +88,7 @@
     "title": "Renovation & Remodeling",
     "summary": "Revitalizing spaces with modern upgrades, structural improvements, and aesthetic enhancements.",
     "description": "Renovation & Remodeling transforms existing spaces with technically sound upgrades, improved flow, and upgraded aesthetics.",
-    "image": "https://sahconstructions.com/assets/work/Renovation.png",
+    "image": "/work/renovationandmodeling.png",
     "features": [
       "34+ Spaces Transformed",
       "13+ Years in Renovation",
@@ -109,7 +109,7 @@
     "title": "Painting Work",
     "summary": "Revitalizing spaces with modern upgrades, structural improvements, and aesthetic enhancements.",
     "description": "Painting Work provides interior and exterior appearance improvement with surface preparation, durable systems, and finish quality control.",
-    "image": "https://sahconstructions.com/assets/work/paintingwork.png",
+    "image": "/work/paintingwork.png",
     "features": [
       "34+ Spaces Transformed",
       "13+ Years in Renovation",
