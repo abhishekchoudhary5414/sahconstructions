@@ -20,6 +20,12 @@ export default function EnquiryPopup() {
   }, []);
 
   useEffect(() => {
+    const handleOpen = () => setVisible(true);
+    window.addEventListener('open-enquiry', handleOpen);
+    return () => window.removeEventListener('open-enquiry', handleOpen);
+  }, []);
+
+  useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setVisible(false);
     };

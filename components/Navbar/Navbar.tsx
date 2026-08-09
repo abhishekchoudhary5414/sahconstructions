@@ -82,16 +82,25 @@ export default function Navbar() {
                     </div>
                 </div>
             </header>
-            <a
-                className={styles.whatsappFixed}
-                href={whatsappHref}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Chat on WhatsApp"
-            >
-                <WhatsAppIcon fontSize="small" />
-                WhatsApp
-            </a>
+            <div className={styles.floatingActions}>
+                <a
+                    className={styles.callFixed}
+                    href={phoneHref}
+                    aria-label={`Call ${companyData.name}`}
+                >
+                    Call Now
+                </a>
+                <a
+                    className={styles.whatsappFixed}
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Chat on WhatsApp"
+                >
+                    <WhatsAppIcon fontSize="small" />
+                    WhatsApp
+                </a>
+            </div>
         </>
     );
 }

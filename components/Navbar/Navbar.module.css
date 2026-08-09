@@ -145,22 +145,38 @@
   height: 1.3rem;
 }
 
-.whatsappFixed {
+.floatingActions {
   position: fixed;
-  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  z-index: 999999;
+}
+
+.callFixed,
+.whatsappFixed {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1rem;
-  background: #25d366;
-  color: #fff;
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  z-index: 999999;
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+}
+
+.callFixed {
+  background: linear-gradient(135deg, var(--primary-color), #f07a2d);
+  color: #fff;
+}
+
+.whatsappFixed {
+  background: #25d366;
+  color: #fff;
 }
 
 .whatsappFixed svg {
@@ -247,10 +263,13 @@
     font-size: 0.92rem;
   }
 
-  .whatsappFixed {
-    bottom: 0.85rem;
+  .floatingActions {
     right: 0.85rem;
+    bottom: 0.85rem;
+  }
+
+  .callFixed,
+  .whatsappFixed {
     padding: 0.75rem 0.9rem;
-    z-index: 99999;
   }
 }
