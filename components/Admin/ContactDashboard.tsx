@@ -138,7 +138,7 @@ export default function ContactDashboard() {
                                 <td className={styles.messageCell}>{row.message || '-'}</td>
                                 <td><select className={`${styles.statusSelect} ${styles[`status${status.replace(/\s/g, '')}`] || ''}`} value={status} disabled={savingId === row.id} onChange={(event) => updateStatus(row.id, event.target.value)}>{statusOptions.map((option) => <option key={option} value={option}>{option}</option>)}</select></td>
                                 <td>{new Date(row.created_at).toLocaleString()}</td>
-                                <td className={styles.actions}><IconActions callHref={`tel:+${cleanNumber(row.phone)}`} waHref={`https://wa.me/${digits}?text=${encodeURIComponent(`Hello ${row.name || ''}, I'm contacting you regarding your message.`)}`} callAria="Call contact" waAria="WhatsApp contact" /></td>
+                                <td className={styles.actions}><IconActions callHref={`tel:${cleanNumber(row.phone)}`} waHref={`https://wa.me/${digits}?text=${encodeURIComponent(`Hello ${row.name || ''}, I'm contacting you regarding your message.`)}`} callAria="Call contact" waAria="WhatsApp contact" /></td>
                             </tr>;
                         })}
                     </tbody>

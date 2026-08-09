@@ -48,7 +48,7 @@ function whatsappHref(number: string | null | undefined, text: string) {
 
 function telHref(number: string | null | undefined) {
   const clean = cleanNumber(number);
-  return `tel:+${clean}`;
+  return `tel:${clean}`;
 }
 
 export default function EnquiryDashboard() {
