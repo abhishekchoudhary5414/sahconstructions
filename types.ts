@@ -79,10 +79,19 @@ export interface Project {
 }
 
 export interface EquipmentItem {
-  name: string;
-  type: string;
+  slug: string;
+  title: string;
+  summary: string;
   details: string;
-  icon: string;
+  image: string;
+  manufacturer?: string;
+  condition?: string;
+  category?: string;
+  features: string[];
+  cta: {
+    readMore: string;
+    quote?: string;
+  };
 }
 
 export interface TeamMember {

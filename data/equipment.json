@@ -1,26 +1,92 @@
 [
   {
-    "name": "Tower Crane",
-    "type": "Lifting",
-    "details": "High-capacity lifting equipment for heavy materials and large building sections.",
-    "icon": "🏗️"
+    "slug": "mixture-machine",
+    "title": "Mixture Machine",
+    "summary": "Heavy-duty concrete mixture machine designed for consistent blending of cement, sand, and aggregates.",
+    "details": "Ideal for both small and large-scale construction sites. 500L drum capacity. Electric and diesel variants available with continuous mixing system.",
+    "image": "/equipments/mixturemachine.png",
+    "manufacturer": "Universal",
+    "condition": "New",
+    "category": "Concrete Equipment",
+    "features": [
+      "500L drum capacity",
+      "Electric and diesel variants",
+      "Continuous mixing system"
+    ],
+    "cta": {
+      "quote": "Get a Quote"
+    }
   },
   {
-    "name": "Excavator",
-    "type": "Earthworks",
-    "details": "Robust excavators for site preparation, trenching and bulk earthmoving.",
-    "icon": "🚜"
+    "slug": "shuttering-plates",
+    "title": "Shuttering Plates",
+    "summary": "Durable shuttering plates used for forming concrete structures with high load-bearing capacity and reusability.",
+    "details": "MS sheet with reinforced edges. Standard sizes: 600mm x 900mm. Rust-resistant coating.",
+    "image": "/equipments/shutteringplates.png",
+    "manufacturer": "Apollo Formtech",
+    "condition": "Excellent",
+    "category": "Formwork",
+    "features": [
+      "MS sheet with reinforced edges",
+      "Standard sizes: 600mm x 900mm",
+      "Rust-resistant coating"
+    ],
+    "cta": {
+      "quote": "Get a Quote"
+    }
   },
   {
-    "name": "Concrete Mixer",
-    "type": "Concrete",
-    "details": "On-site mixing capacity for quality concrete production and rapid placement.",
-    "icon": "🧱"
+    "slug": "scaffolding",
+    "title": "Scaffolding",
+    "summary": "Modular scaffolding system for safe and efficient access during construction, maintenance, and repair work.",
+    "details": "Hot-dip galvanized steel. Adjustable height frames and anti-slip platforms for quick assembly and maximum stability.",
+    "image": "/equipments/scaffolding.png",
+    "manufacturer": "Tata Structura",
+    "condition": "Used",
+    "category": "Access Equipment",
+    "features": [
+      "Hot-dip galvanized steel",
+      "Adjustable height frames",
+      "Anti-slip platforms"
+    ],
+    "cta": {
+      "quote": "Get a Quote"
+    }
   },
   {
-    "name": "Survey Drone",
-    "type": "Planning",
-    "details": "Aerial survey and site mapping technology for accurate layout and progress review.",
-    "icon": "📡"
+    "slug": "compactors",
+    "title": "Compactors",
+    "summary": "High-performance soil compactor used for ground leveling and surface preparation to ensure optimal soil density.",
+    "details": "10-ton operating weight, vibratory drum system and fuel-efficient diesel engine for roadworks and foundations.",
+    "image": "/equipments/compactors.png",
+    "manufacturer": "JCB",
+    "condition": "New",
+    "category": "Earth Moving",
+    "features": [
+      "10-ton operating weight",
+      "Vibratory drum system",
+      "Fuel-efficient diesel engine"
+    ],
+    "cta": {
+      "quote": "Get a Quote"
+    }
+  },
+  {
+    "slug": "jcb",
+    "title": "JCB",
+    "summary": "JCB's powerful soil preparation solution for efficient ground leveling and surface preparation.",
+    "details": "Ensures optimal soil density for robust foundations and durable roadworks; reliable results with JCB's quality and durability.",
+    "image": "/equipments/jcb.png",
+    "manufacturer": "JCB",
+    "condition": "New",
+    "category": "Earth Moving",
+    "features": [
+      "10-ton operating weight",
+      "Vibratory drum system",
+      "Fuel-efficient diesel engine"
+    ],
+    "cta": {
+      "quote": "Get a Quote"
+    }
   }
 ]
