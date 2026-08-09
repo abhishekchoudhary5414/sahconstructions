@@ -19,15 +19,16 @@ export async function GET(request: Request) {
   const pageSize = Number(url.searchParams.get('pageSize') || '10');
   const sortKey = url.searchParams.get('sortKey') || 'created_at';
   const sortOrder = url.searchParams.get('sortOrder') || 'desc';
+  const search = url.searchParams.get('search')?.trim() || '';
 
   const normalizedPage = page < 1 ? 1 : page;
   const limit = pageSize === 0 ? 1000 : pageSize;
   const offset = (normalizedPage - 1) * limit;
   const supabase = getSupabase();
 
-  const { data, count, error } = await supabase
-    .from('enquiries')
-    .select('*', { count: 'exact' })
+  let query = supabase.from('enquiries').select('*', { count: 'exact' });
+  if (search) query = query.or(`name.ilike.%${search}%,phone.ilike.%${search}%`);
+  const { data, count, error } = await query
     .order(sortKey, { ascending: sortOrder === 'asc' })
     .range(offset, offset + limit - 1);
 

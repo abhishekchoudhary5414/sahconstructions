@@ -23,8 +23,8 @@ const sortOptions = [
 const statusOptions = ['New', 'Contacted', 'Not Received', 'In Progress', 'Completed', 'Not Interested'];
 
 const statusCardOptions = [
+    { label: 'New', className: 'new' },
   { label: 'Contacted', className: 'contacted' },
-  { label: 'Not Received', className: 'notReceived' },
   { label: 'In Progress', className: 'inProgress' },
   { label: 'Completed', className: 'completed' },
 ];
@@ -57,6 +57,7 @@ export default function EnquiryDashboard() {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortValue, setSortValue] = useState(sortOptions[0].value);
+  const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const [savingId, setSavingId] = useState<number | null>(null);
   const [error, setError] = useState('');
@@ -81,6 +82,7 @@ export default function EnquiryDashboard() {
         pageSize: String(sizeParam),
         sortKey,
         sortOrder,
+        search,
       });
 
       try {
@@ -110,7 +112,7 @@ export default function EnquiryDashboard() {
     loadEnquiries();
 
     return () => controller.abort();
-  }, [page, pageSize, sortKey, sortOrder]);
+  }, [page, pageSize, sortKey, sortOrder, search]);
 
   const pageCount = pageSize === 0 ? 1 : Math.ceil(totalRecords / pageSize);
 
@@ -173,6 +175,7 @@ export default function EnquiryDashboard() {
         </div>
 
         <div className={styles.controls}>           
+          <label className={styles.controlGroup}><span>Search name or number</span><input className={styles.searchInput} value={search} placeholder="Name or phone" onChange={(event) => { setSearch(event.target.value); setPage(1); }} /></label>
           <label className={styles.controlGroup}>
             <span>Page size</span>
             <select

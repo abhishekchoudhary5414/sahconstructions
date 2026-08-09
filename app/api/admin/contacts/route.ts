@@ -15,9 +15,12 @@ export async function GET(request: Request) {
   const pageSize = Number(url.searchParams.get('pageSize') || '10');
   const sortKey = url.searchParams.get('sortKey') || 'created_at';
   const sortOrder = url.searchParams.get('sortOrder') || 'desc';
+  const search = url.searchParams.get('search')?.trim() || '';
   const limit = pageSize === 0 ? 1000 : pageSize;
   const offset = (page - 1) * limit;
-  const { data, count, error } = await getSupabase().from('contacts').select('*', { count: 'exact' }).order(sortKey, { ascending: sortOrder === 'asc' }).range(offset, offset + limit - 1);
+  let query = getSupabase().from('contacts').select('*', { count: 'exact' });
+  if (search) query = query.or(`name.ilike.%${search}%,phone.ilike.%${search}%`);
+  const { data, count, error } = await query.order(sortKey, { ascending: sortOrder === 'asc' }).range(offset, offset + limit - 1);
   if (error) return Response.json({ error: error.message }, { status: 500 });
   return Response.json({ data, count });
 }

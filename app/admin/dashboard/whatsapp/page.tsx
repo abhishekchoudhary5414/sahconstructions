@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import AdminNavbar from '../../../../components/Admin/AdminNavbar';
+import WhatsappDashboard from '../../../../components/Admin/WhatsappDashboard';
 import styles from '../DashboardPage.module.css';
 
 export const metadata: Metadata = {
@@ -29,13 +30,7 @@ export default async function WhatsappDashboardPage() {
     <>
       <AdminNavbar username="Admin" />
       <main className={styles.dashboard}>
-        <div className={styles.inner}>
-          <div className={styles.headerBlock}>
-            <p className={styles.label}>Whatsapp dashboard</p>
-            <h2>Latest WhatsApp clicks</h2>
-            <p>This section will show recent WhatsApp actions and click analytics.</p>
-          </div>
-        </div>
+        <WhatsappDashboard />
       </main>
     </>
   );

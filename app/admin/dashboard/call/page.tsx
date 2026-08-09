@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import AdminNavbar from '../../../../components/Admin/AdminNavbar';
+import CallDashboard from '../../../../components/Admin/CallDashboard';
 import styles from '../DashboardPage.module.css';
 
 export const metadata: Metadata = {
@@ -29,13 +30,7 @@ export default async function CallDashboardPage() {
     <>
       <AdminNavbar username="Admin" />
       <main className={styles.dashboard}>
-        <div className={styles.inner}>
-          <div className={styles.headerBlock}>
-            <p className={styles.label}>Call dashboard</p>
-            <h2>Latest call clicks</h2>
-            <p>This section will show recent call engagements and click data.</p>
-          </div>
-        </div>
+        <CallDashboard />
       </main>
     </>
   );
