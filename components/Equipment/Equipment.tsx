@@ -66,9 +66,9 @@ export default function Equipment({ equipment, showLoadMore = true }: EquipmentP
           <article key={item.slug} className={styles.card}>
             <div className={styles.media}>
               <img src={item.image} alt={item.title} className={styles.image} />
-              <div className={styles.logoWrap}>
+              {/* <div className={styles.logoWrap}>
                 <span className={styles.category}>{item.category}</span>
-              </div>
+              </div> */}
             </div>
 
             <div className={styles.body}>

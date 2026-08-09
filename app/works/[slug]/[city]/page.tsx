@@ -118,7 +118,7 @@ export default function WorkCityDetail({ params }: PageProps) {
               <article className={styles.copyPanel}>
                 <div className={styles.projectHeader}>
                   <span className={styles.label}>Work overview</span>
-                  <h1>{work.title}</h1>
+                  <h1>{work.title} in {cityTitle}</h1>
                   <p className={styles.summary}>{work.summary}</p>
                 </div>
 
