@@ -3,7 +3,6 @@ import projectsData from '../../data/projects.json';
 import Projects from '../../components/Projects/Projects';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import EnquiryPopup from '../../components/EnquiryPopup/EnquiryPopup';
 
 export const metadata: Metadata = {
   title: 'Projects | SAH Constructions',
@@ -21,7 +20,6 @@ export default function ProjectsPage() {
         <Projects projects={projectsData} showLoadMore={false} />
       </main>
       <Footer />
-      <EnquiryPopup />
     </>
   );
 }

@@ -1,78 +1,295 @@
-.section {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+.worksSection {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 1rem 4rem;
 }
 
-.header {
-  margin-bottom: 2rem;
+.worksSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(212, 85, 0, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  pointer-events: none;
+}
+
+.bgIcons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgIcon {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.12);
+  width: 6rem !important;
+  height: 6rem !important;
+  animation: floatIcon 7s ease-in-out infinite;
+}
+
+.bgIconOne { top: 7%; left: 4%; --icon-rotation: -12deg; }
+.bgIconTwo { top: 14%; right: 6%; --icon-rotation: 12deg; }
+.bgIconThree { bottom: 12%; left: 9%; --icon-rotation: 8deg; }
+.bgIconFour { bottom: 8%; right: 10%; --icon-rotation: -16deg; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.headerBlock {
+  margin-bottom: 2.75rem;
+  text-align: center;
 }
 
 .label {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.8rem;
   color: var(--primary-color);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
-.header .header h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 2.8rem);
+.headerBlock h2 {
+  margin: 0 0 1rem;
   color: var(--secondary-color);
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.lead {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--muted-color);
+  line-height: 1.84;
+  font-size: 1rem;
 }
 
-.card {
+.workStream {
   display: grid;
-  gap: 1.5rem;
-  padding: 1.75rem;
+  gap: 2rem;
+}
+
+.workRow {
+  display: grid;
+  grid-template-columns: minmax(390px, 0.95fr) minmax(450px, 1.05fr);
+  align-items: stretch;
+  border-radius: 1.4rem;
+  overflow: hidden;
   border: 1px solid var(--border);
   background: #fff;
-  border-radius: var(--radius);
-  min-height: 330px;
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.06);
 }
 
-.top h3 {
-  margin: 0 0 0.75rem;
-  color: var(--secondary-color);
-  font-size: 1.25rem;
+.workRow.reverse {
+  grid-template-columns: minmax(450px, 1.05fr) minmax(390px, 0.95fr);
 }
 
-.top p {
-  margin: 0;
-  color: var(--muted-color);
-  line-height: 1.8;
+.workRow.reverse .imageWrap {
+  order: 2;
 }
 
-.bottom ul {
-  margin: 0 0 1rem;
-  padding-left: 1.15rem;
-  color: var(--muted-color);
+.workRow.reverse .copyWrap {
+  order: 1;
 }
 
-.bottom li {
+.imageWrap {
+  position: relative;
+  min-height: 360px;
+  background: linear-gradient(135deg, #eef6f2, #fffdf8);
+}
+
+.imageWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.42));
+  pointer-events: none;
+}
+
+.workImage {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.copyWrap {
+  display: flex;
+  align-items: center;
+  padding: clamp(1rem, 2.7vw, 2rem);
+}
+
+.contentCard {
+  width: 100%;
+}
+
+.kicker {
+  display: inline-flex;
   margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  text-transform: uppercase;
 }
 
-.link {
-  color: var(--primary-color);
-  font-weight: 600;
+.contentCard h3 {
+  margin: 0 0 0.9rem;
+  color: var(--secondary-color);
+  font-size: clamp(1.75rem, 2.3vw, 2.3rem);
+  line-height: 1.12;
+}
+
+.summary {
+  margin: 0 0 1rem;
+  color: var(--muted-color);
+  line-height: 1.88;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.62rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.metricItem {
+  display: flex;
+  align-items: center;
+  gap: 0.36rem;
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.44rem 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.metricDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.primaryCta,
+.viewCta,
+.whatsappCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.72rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.76rem;
+  text-decoration: none;
+  transition: 180ms ease;
+}
+
+.primaryCta {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #fff;
+}
+
+.primaryCta:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.viewCta {
+  border: 1px solid var(--secondary-color);
+  background: #fff;
+  color: var(--secondary-color);
+}
+
+.viewCta:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.whatsappCta {
+  border: 1px solid #00b24a;
+  background: linear-gradient(135deg, #16a34a, #10b981);
+  color: #fff;
+}
+
+.whatsappCta:hover {
+  background: #128a3b;
+  border-color: #128a3b;
+}
+
+@keyframes floatIcon {
+  0%,
+  100% { transform: translate3d(0, 0, 0) rotate(var(--icon-rotation, 0deg)); }
+  50% { transform: translate3d(0, -8px, 0) rotate(calc(var(--icon-rotation, 0deg) + 2deg)); }
 }
 
 @media (max-width: 980px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+  .workRow,
+  .workRow.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .workRow.reverse .imageWrap,
+  .workRow.reverse .copyWrap {
+    order: initial;
+  }
+
+  .workImage {
+    min-height: 300px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaRow {
+    align-items: stretch;
+  }
+
+  .primaryCta,
+  .viewCta,
+  .whatsappCta {
+    width: 100%;
   }
 }
 
-@media (max-width: 680px) {
-  .grid {
-    grid-template-columns: 1fr;
+@media (max-width: 620px) {
+  .worksSection {
+    padding: 3rem 0.8rem 2.5rem;
+  }
+
+  .headerBlock h2 {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .workRow {
+    border-radius: 1rem;
+  }
+
+  .copyWrap {
+    padding: 1rem;
+  }
+
+  .workImage {
+    min-height: 260px;
   }
 }

@@ -41,6 +41,20 @@ export interface Service {
   image: string;
 }
 
+export interface Work {
+  slug: string;
+  title: string;
+  summary: string;
+  description: string;
+  image: string;
+  features: string[];
+  metrics: string[];
+  cta: {
+    readMore: string;
+    quote: string;
+  };
+}
+
 export interface Project {
   slug: string;
   title: string;

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import companyData from '../data/company.json';
-import servicesData from '../data/services.json';
+import worksData from '../data/works.json';
 import projectsData from '../data/projects.json';
 import equipmentData from '../data/equipment.json';
 import teamData from '../data/team.json';
@@ -42,7 +42,7 @@ export default function HomePage() {
         <Hero company={companyData} />
         <About company={companyData} />
         <HowWeWork />
-        <OurWork services={servicesData} />
+        <OurWork works={worksData} />
         <Projects projects={projectsData} />
         <Equipment equipment={equipmentData} />
         <Clients clients={clientsData} />

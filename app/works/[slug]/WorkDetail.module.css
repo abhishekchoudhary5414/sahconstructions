@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.projectSection {
+.workSection {
   position: relative;
   width: 100%;
   background: linear-gradient(180deg, #eef6f2 0%, #f9fafb 100%);
@@ -10,7 +10,7 @@
   padding: 4.5rem 1rem 4rem;
 }
 
-.projectSection::before {
+.workSection::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -92,7 +92,6 @@
   gap: 0.9rem;
   flex-wrap: wrap;
   margin-top: -0.2rem;
-  width: 100%;
 }
 
 .copyPanel {
@@ -104,8 +103,11 @@
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
 }
 
-.projectHeader {
-  margin-bottom: 1rem;
+.projectHeader h1 {
+  margin: 0 0 0.9rem;
+  color: var(--secondary-color);
+  font-size: clamp(2.1rem, 3vw, 2.9rem);
+  line-height: 1.1;
 }
 
 .label {
@@ -115,41 +117,6 @@
   letter-spacing: 0.16em;
   font-size: 0.82rem;
   font-weight: 800;
-}
-
-.logoRow {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 0.85rem;
-}
-
-.logo {
-  width: 66px;
-  height: 66px;
-  object-fit: contain;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 0.2rem;
-}
-
-.status {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 0.42rem 0.75rem;
-  background: #edf7ef;
-  color: var(--secondary-color);
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-.projectHeader h1 {
-  margin: 0 0 0.9rem;
-  color: var(--secondary-color);
-  font-size: clamp(2.1rem, 3vw, 2.9rem);
-  line-height: 1.1;
 }
 
 .summary {
@@ -171,7 +138,7 @@
 
 .metricsGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
   margin: 1rem 0 1rem;
 }
@@ -179,58 +146,18 @@
 .metricCard {
   display: flex;
   align-items: center;
-  gap: 0.72rem;
+  justify-content: center;
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 0.82rem;
   background: #f8fbff;
 }
 
-.metricIcon {
-  color: var(--primary-color);
-}
-
-.metricLabel {
-  display: block;
-  margin-bottom: 0.2rem;
-  color: var(--muted-color);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .metricValue {
   margin: 0;
   color: var(--secondary-color);
   font-weight: 800;
-}
-
-.detailsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 1rem 0 1rem;
-}
-
-.detailsGrid div {
-  padding: 0.85rem;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-}
-
-.detailsGrid p {
-  margin: 0.35rem 0 0;
-  color: var(--muted-color);
-}
-
-.detailLabel {
-  font-weight: 800;
-  color: var(--secondary-color);
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-align: center;
 }
 
 .scopePanel {
@@ -241,57 +168,9 @@
   border: 1px solid rgba(30, 41, 59, 0.08);
 }
 
-.processPanel {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background: #fffdf8;
-  border: 1px solid rgba(212, 85, 0, 0.16);
-}
-
-.processPanel h3 {
-  margin: 0 0 0.75rem;
-  color: var(--secondary-color);
-}
-
-.processList {
-  display: grid;
-  gap: 0.85rem;
-}
-
-.processItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.processItem p {
-  margin: 0;
-  color: var(--muted-color);
-  line-height: 1.74;
-}
-
-.processIndex {
-  display: inline-grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: var(--primary-color);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 900;
-}
-
 .scopePanel h3 {
   margin: 0 0 0.55rem;
   color: var(--secondary-color);
-}
-
-.scopePanel p {
-  margin: 0 0 0.75rem;
-  color: var(--muted-color);
-  line-height: 1.8;
 }
 
 .featureList {
@@ -317,12 +196,10 @@
   color: var(--primary-color);
 }
 
-/* CTA row is now a separate grid row, so avoid inheriting the old image-panel margin logic. */
-
 .primaryCta,
 .secondaryCta,
 .whatsappCta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 42px;
@@ -332,7 +209,6 @@
   font-size: 0.78rem;
   text-decoration: none;
   transition: all 180ms ease;
-  width: 100%;
 }
 
 .primaryCta {
@@ -371,10 +247,6 @@
   transform: translateY(-2px);
 }
 
-.imagePanel {
-  position: relative;
-}
-
 .mediaWrap {
   position: relative;
   min-height: 100%;
@@ -385,7 +257,7 @@
   box-shadow: 0 18px 34px rgba(15, 23, 42, 0.06);
 }
 
-.projectImage {
+.workImage {
   width: 100%;
   height: 100%;
   min-height: 520px;
@@ -443,7 +315,7 @@
       "content";
   }
 
-  .projectImage {
+  .workImage {
     min-height: 340px;
   }
 
@@ -461,7 +333,7 @@
 }
 
 @media (max-width: 620px) {
-  .projectSection {
+  .workSection {
     padding: 3rem 0.8rem 2.5rem;
   }
 
@@ -469,12 +341,11 @@
     gap: 1rem;
   }
 
-  .metricsGrid,
-  .detailsGrid {
+  .metricsGrid {
     grid-template-columns: 1fr;
   }
 
-  .projectImage {
+  .workImage {
     min-height: 260px;
   }
 

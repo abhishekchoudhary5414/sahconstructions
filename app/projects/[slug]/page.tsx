@@ -10,7 +10,6 @@ import companyData from '../../../data/company.json';
 import projectsData from '../../../data/projects.json';
 import Navbar from '../../../components/Navbar/Navbar';
 import Footer from '../../../components/Footer/Footer';
-import EnquiryPopup from '../../../components/EnquiryPopup/EnquiryPopup';
 import styles from './ProjectDetail.module.css';
 
 interface PageProps {
@@ -194,7 +193,6 @@ export default function ProjectDetail({ params }: PageProps) {
         </section>
       </main>
       <Footer />
-      <EnquiryPopup />
     </>
   );
 }

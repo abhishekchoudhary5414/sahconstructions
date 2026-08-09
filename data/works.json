@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "warehouse-construction",
+    "title": "Warehouse Construction",
+    "summary": "Building high-performance warehouses optimized for logistics, storage, and operational efficiency.",
+    "description": "Warehouse Construction is designed to create logistics-ready, high-performance assets that support fast operations and dependable service capacity.",
+    "image": "https://sahconstructions.com/assets/work/commercial.png",
+    "features": [
+      "30+ Warehouses Built",
+      "13+ Years in Industrial Construction",
+      "98% Client Satisfaction"
+    ],
+    "metrics": [
+      "30+ Warehouses Built",
+      "13+ Years in Industrial Construction",
+      "98% Client Satisfaction"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/warehouse-construction/",
+      "quote": "https://sahconstructions.com/works/warehouse-construction/"
+    }
+  },
+  {
+    "slug": "commercial-construction",
+    "title": "Commercial Construction",
+    "summary": "Designing and constructing commercial spaces that elevate business functionality and brand presence.",
+    "description": "Commercial Construction brings together planning, delivery, and fit-out coordination for spaces that support business growth and performance.",
+    "image": "https://sahconstructions.com/assets/work/commercial.png",
+    "features": [
+      "20+ Commercial Projects",
+      "13+ Years in Business",
+      "100% On-Time Delivery"
+    ],
+    "metrics": [
+      "20+ Commercial Projects",
+      "13+ Years in Business",
+      "100% On-Time Delivery"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/commercial-construction/",
+      "quote": "https://sahconstructions.com/works/commercial-construction/"
+    }
+  },
+  {
+    "slug": "residential-construction",
+    "title": "Residential Construction",
+    "summary": "Crafting homes that blend comfort, style, and sustainability for modern living.",
+    "description": "Residential Construction creates future-ready homes through coordinated planning, disciplined execution, and strong finish quality.",
+    "image": "https://sahconstructions.com/assets/work/resedential.png",
+    "features": [
+      "15+ Homes Delivered",
+      "13+ Years in Residential Design",
+      "95% Repeat Clients"
+    ],
+    "metrics": [
+      "15+ Homes Delivered",
+      "13+ Years in Residential Design",
+      "95% Repeat Clients"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/residential-construction/",
+      "quote": "https://sahconstructions.com/works/residential-construction/"
+    }
+  },
+  {
+    "slug": "project-management",
+    "title": "Project Management",
+    "summary": "End-to-end construction project management ensuring timely delivery and budget control.",
+    "description": "Project Management provides disciplined coordination, schedule control, cost visibility, and risk management for complex delivery journeys.",
+    "image": "https://sahconstructions.com/assets/work/Management.png",
+    "features": [
+      "11+ Projects Managed",
+      "13+ Certified PM Experts",
+      "99% Budget Accuracy"
+    ],
+    "metrics": [
+      "11+ Projects Managed",
+      "13+ Certified PM Experts",
+      "99% Budget Accuracy"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/project-management/",
+      "quote": "https://sahconstructions.com/works/project-management/"
+    }
+  },
+  {
+    "slug": "renovation-remodeling",
+    "title": "Renovation & Remodeling",
+    "summary": "Revitalizing spaces with modern upgrades, structural improvements, and aesthetic enhancements.",
+    "description": "Renovation & Remodeling transforms existing spaces with technically sound upgrades, improved flow, and upgraded aesthetics.",
+    "image": "https://sahconstructions.com/assets/work/Renovation.png",
+    "features": [
+      "34+ Spaces Transformed",
+      "13+ Years in Renovation",
+      "97% Client Retention"
+    ],
+    "metrics": [
+      "34+ Spaces Transformed",
+      "13+ Years in Renovation",
+      "97% Client Retention"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/renovation-remodeling/",
+      "quote": "https://sahconstructions.com/works/renovation-remodeling/"
+    }
+  },
+  {
+    "slug": "painting-work",
+    "title": "Painting Work",
+    "summary": "Revitalizing spaces with modern upgrades, structural improvements, and aesthetic enhancements.",
+    "description": "Painting Work provides interior and exterior appearance improvement with surface preparation, durable systems, and finish quality control.",
+    "image": "https://sahconstructions.com/assets/work/paintingwork.png",
+    "features": [
+      "34+ Spaces Transformed",
+      "13+ Years in Renovation",
+      "97% Client Retention"
+    ],
+    "metrics": [
+      "34+ Spaces Transformed",
+      "13+ Years in Renovation",
+      "97% Client Retention"
+    ],
+    "cta": {
+      "readMore": "https://sahconstructions.com/works/painting-work/",
+      "quote": "https://sahconstructions.com/works/painting-work/"
+    }
+  }
+]
