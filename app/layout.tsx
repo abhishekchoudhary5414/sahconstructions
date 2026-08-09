@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: 'SAH Constructions',
     type: 'website',
-    images: [{ url: '/og-image.svg', alt: 'SAH Constructions premium construction services' }]
+    images: [{ url: '/logo/circlelogo.svg', alt: 'SAH Constructions premium construction services' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SAH Constructions',
     description: 'Premium construction services from SAH Constructions.',
-    images: ['/og-image.svg']
+    images: ['/logo/circlelogo.svg']
   }
 };
 

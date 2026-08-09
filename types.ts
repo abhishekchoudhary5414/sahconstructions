@@ -48,7 +48,13 @@ export interface Project {
   summary: string;
   description: string;
   image: string;
+  logo: string;
   category: string;
+  industry: string;
+  headquarters: string;
+  established: string;
+  features: string[];
+  externalUrl?: string;
 }
 
 export interface EquipmentItem {

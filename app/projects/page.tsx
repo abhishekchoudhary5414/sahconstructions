@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import projectsData from '../../data/projects.json';
-import styles from './ProjectsPage.module.css';
+import Projects from '../../components/Projects/Projects';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import EnquiryPopup from '../../components/EnquiryPopup/EnquiryPopup';
 
 export const metadata: Metadata = {
   title: 'Projects | SAH Constructions',
@@ -13,23 +15,13 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div>
-          <p className={styles.label}>Projects</p>
-          <h1>Our completed construction projects.</h1>
-          <p>Explore projects across sectors that reflect our disciplined execution and engineering expertise.</p>
-        </div>
-      </section>
-      <div className={styles.grid}>
-        {projectsData.map((project) => (
-          <article key={project.slug} className={styles.card}>
-            <h2>{project.title}</h2>
-            <p>{project.summary}</p>
-            <Link href={`/projects/${project.slug}`} className={styles.link}>Read case study</Link>
-          </article>
-        ))}
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Projects projects={projectsData} showLoadMore={false} />
+      </main>
+      <Footer />
+      <EnquiryPopup />
+    </>
   );
 }

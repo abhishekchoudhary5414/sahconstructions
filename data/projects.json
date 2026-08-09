@@ -1,29 +1,78 @@
 [
   {
-    "slug": "urban-residential-towers",
-    "title": "Urban Residential Towers",
-    "location": "Chennai",
-    "summary": "A premium residential tower project with landscaped amenity spaces and efficient layouts.",
-    "description": "This project delivered modern apartment towers with strong structural systems, refined exteriors and community amenities.",
-    "image": "/project-residential.jpg",
-    "category": "Residential"
+    "slug": "alkem",
+    "title": "Alkem",
+    "location": "Mumbai, India",
+    "summary": "A pharmaceutical manufacturing and R&D facility built to meet global standards.",
+    "description": "Designed for operational efficiency, regulatory compliance, and innovation in healthcare.",
+    "image": "https://sahconstructions.com/assets/projects/alkem.jpg",
+    "logo": "https://sahconstructions.com/assets/client/alkem.png",
+    "category": "Pharmaceuticals",
+    "industry": "Pharmaceuticals",
+    "headquarters": "Mumbai, India",
+    "established": "1973",
+    "features": [
+      "GMP-Compliant Infrastructure",
+      "Temperature-Controlled Zones",
+      "Advanced Waste Management"
+    ],
+    "externalUrl": "https://sahconstructions.com/projects/alkem/"
   },
   {
-    "slug": "corporate-business-campus",
-    "title": "Corporate Business Campus",
-    "location": "Bengaluru",
-    "summary": "A corporate campus built for flexibility, comfort and sustainability.",
-    "description": "The campus includes office buildings, collaboration spaces, and engineered systems for high-performance operations.",
-    "image": "/project-commercial.jpg",
-    "category": "Commercial"
+    "slug": "lupin",
+    "title": "Lupin",
+    "location": "Mumbai, India",
+    "summary": "A cutting-edge pharmaceutical campus featuring research labs, clean rooms, and sustainable production units.",
+    "description": "Built to support innovation and scalability in drug development.",
+    "image": "https://sahconstructions.com/assets/projects/lupin.jpg",
+    "logo": "https://sahconstructions.com/assets/client/lupin.png",
+    "category": "Pharmaceuticals",
+    "industry": "Pharmaceuticals & Biotech",
+    "headquarters": "Mumbai, India",
+    "established": "1968",
+    "features": [
+      "ISO-Certified Labs",
+      "Energy-Efficient Systems",
+      "Modular Expansion Capability"
+    ],
+    "externalUrl": "https://sahconstructions.com/projects/lupin/"
   },
   {
-    "slug": "regional-highway-upgrade",
-    "title": "Regional Highway Upgrade",
-    "location": "Tamil Nadu",
-    "summary": "A strategic highway improvement project enhancing transport capacity and pavement life.",
-    "description": "This civil infrastructure project improved road quality, drainage and safety for regional connectivity.",
-    "image": "/project-infrastructure.jpg",
-    "category": "Infrastructure"
+    "slug": "scorpion",
+    "title": "Scorpion",
+    "location": "Hyderabad, India",
+    "summary": "A high-security defense-grade facility designed for precision engineering and tactical research.",
+    "description": "Combines robust architecture with advanced surveillance and control systems.",
+    "image": "https://sahconstructions.com/assets/projects/3.jpg",
+    "logo": "https://sahconstructions.com/assets/client/scorpion.png",
+    "category": "Defense",
+    "industry": "Defense Technology",
+    "headquarters": "Hyderabad, India",
+    "established": "2010",
+    "features": [
+      "Secure Perimeter Design",
+      "R&D Bunkers",
+      "AI-Driven Monitoring"
+    ],
+    "externalUrl": "https://sahconstructions.com/projects/scorpion/"
+  },
+  {
+    "slug": "nr-lab",
+    "title": "NR Lab",
+    "location": "Bangalore, India",
+    "summary": "A next-gen research lab focused on nanotechnology and material sciences.",
+    "description": "Built with flexible lab modules, collaborative zones, and high-spec equipment integration.",
+    "image": "https://sahconstructions.com/assets/projects/4.png",
+    "logo": "https://sahconstructions.com/assets/client/nr-lab.png",
+    "category": "Research",
+    "industry": "Nanotech Research",
+    "headquarters": "Bangalore, India",
+    "established": "2017",
+    "features": [
+      "Cleanroom Environments",
+      "Modular Lab Design",
+      "Collaborative Research Pods"
+    ],
+    "externalUrl": "https://sahconstructions.com/projects/nr-lab/"
   }
 ]
