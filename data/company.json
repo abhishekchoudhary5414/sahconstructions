@@ -1,0 +1,26 @@
+{
+  "name": "SAH Constructions",
+  "description": "Premium construction services for residential, commercial and infrastructure projects with a focus on quality, safety and modern delivery.",
+  "website": "https://www.sahconstructions.com",
+  "phone": "+91 98765 43210",
+  "email": "contact@sahconstructions.com",
+  "address": {
+    "street": "49 Harbour Road",
+    "city": "Chennai",
+    "region": "Tamil Nadu",
+    "postalCode": "600001",
+    "country": "India"
+  },
+  "hours": "Mon - Sat 8:00am - 6:00pm",
+  "hero": {
+    "headline": "Building modern infrastructure with precision and trust.",
+    "subtitle": "SAH Constructions delivers premium civil, commercial and residential projects with energy-efficient design, strong engineering and exceptional execution.",
+    "cta": "Request a consultation"
+  },
+  "contact": {
+    "headline": "Let's build your next project together.",
+    "subtitle": "Connect with our team for planning, estimating and site management support.",
+    "whatsappMessage": "Hello SAH Constructions, I would like to discuss a construction project.",
+    "mapLabel": "SAH Constructions headquarters"
+  }
+}

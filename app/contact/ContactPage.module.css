@@ -1,0 +1,52 @@
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.label {
+  margin: 0 0 0.75rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  color: var(--secondary-color);
+  font-size: clamp(2.5rem, 4vw, 3.4rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.75;
+}
+
+.contactCards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+}

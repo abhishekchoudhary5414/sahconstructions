@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Tower Crane",
+    "type": "Lifting",
+    "details": "High-capacity lifting equipment for heavy materials and large building sections.",
+    "icon": "🏗️"
+  },
+  {
+    "name": "Excavator",
+    "type": "Earthworks",
+    "details": "Robust excavators for site preparation, trenching and bulk earthmoving.",
+    "icon": "🚜"
+  },
+  {
+    "name": "Concrete Mixer",
+    "type": "Concrete",
+    "details": "On-site mixing capacity for quality concrete production and rapid placement.",
+    "icon": "🧱"
+  },
+  {
+    "name": "Survey Drone",
+    "type": "Planning",
+    "details": "Aerial survey and site mapping technology for accurate layout and progress review.",
+    "icon": "📡"
+  }
+]

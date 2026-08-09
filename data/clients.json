@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Azure Developments",
+    "industry": "Real Estate",
+    "logo": "/client-azure.svg"
+  },
+  {
+    "name": "Civic Infrastructure Ltd.",
+    "industry": "Public Works",
+    "logo": "/client-civic.svg"
+  },
+  {
+    "name": "Harbor Retail Parks",
+    "industry": "Retail",
+    "logo": "/client-harbor.svg"
+  },
+  {
+    "name": "Solaris Energy Hub",
+    "industry": "Energy",
+    "logo": "/client-solaris.svg"
+  }
+]

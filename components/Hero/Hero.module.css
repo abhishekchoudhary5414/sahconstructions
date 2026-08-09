@@ -1,0 +1,303 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent 85%);
+}
+
+.hero::after {
+  border: 1px dashed rgba(59, 130, 246, 0.12);
+  border-radius: 2rem;
+  inset: 1rem;
+}
+
+.overline {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.02;
+  color: var(--secondary-color);
+  max-width: 12ch;
+}
+
+.lead {
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--muted-color);
+  max-width: 55rem;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.primaryCta {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.secondaryCta {
+  border: 1px solid var(--border);
+  color: var(--secondary-color);
+  background: #fff;
+}
+
+.media {
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 32px 70px rgba(30, 41, 59, 0.12);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef4f8 100%);
+}
+
+.lineArt {
+  position: relative;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.gridFrame {
+  position: absolute;
+  inset: 1.8rem;
+  border: 1px dashed rgba(15, 23, 42, 0.16);
+  border-radius: 2rem;
+}
+
+.centerRing {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(59, 130, 246, 0.28);
+  border-radius: 50%;
+}
+
+.iconTile,
+.iconTileSecondary,
+.iconTileTertiary,
+.iconTileQuaternary {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 96px;
+  min-height: 96px;
+  padding: 0.8rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.iconTile {
+  top: 19%;
+  left: 18%;
+}
+
+.iconTileSecondary {
+  top: 19%;
+  right: 18%;
+}
+
+.iconTileTertiary {
+  bottom: 19%;
+  left: 18%;
+}
+
+.iconTileQuaternary {
+  bottom: 19%;
+  right: 18%;
+}
+
+.icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  color: var(--primary-color);
+}
+
+.iconTile span,
+.iconTileSecondary span,
+.iconTileTertiary span,
+.iconTileQuaternary span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.lineOne,
+.lineTwo {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.12), var(--primary-color));
+}
+
+.lineOne {
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  transform: translateY(-50%);
+}
+
+.lineTwo {
+  top: 50%;
+  left: 50%;
+  width: 14%;
+  transform: rotate(90deg) translateX(-50%);
+}
+
+.dotOne,
+.dotTwo {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.dotOne {
+  top: 50%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+}
+
+.dotTwo {
+  top: 50%;
+  right: 24%;
+  transform: translate(50%, -50%);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .media {
+    order: 2;
+  }
+
+  .content {
+    order: 1;
+  }
+
+  .actions {
+    order: 3;
+    grid-column: auto;
+    margin-top: 0.25rem;
+  }
+
+  .card {
+    width: min(100%, 460px);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .lead {
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+  }
+
+  .iconTile,
+  .iconTileSecondary,
+  .iconTileTertiary,
+  .iconTileQuaternary {
+    min-width: 78px;
+    min-height: 78px;
+    padding: 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .icon {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+
+  .iconTile span,
+  .iconTileSecondary span,
+  .iconTileTertiary span,
+  .iconTileQuaternary span {
+    font-size: 0.72rem;
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Rohit Sharma",
+    "role": "Managing Director",
+    "expertise": "Project leadership, strategic planning, client delivery.",
+    "photo": "/team-rohit.jpg"
+  },
+  {
+    "name": "Priya Nair",
+    "role": "Construction Manager",
+    "expertise": "Site coordination, quality control, schedule management.",
+    "photo": "/team-priya.jpg"
+  },
+  {
+    "name": "Arjun Gupta",
+    "role": "Design & Technical Lead",
+    "expertise": "Structural design, engineering review, technical compliance.",
+    "photo": "/team-arjun.jpg"
+  }
+]

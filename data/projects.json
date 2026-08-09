@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "urban-residential-towers",
+    "title": "Urban Residential Towers",
+    "location": "Chennai",
+    "summary": "A premium residential tower project with landscaped amenity spaces and efficient layouts.",
+    "description": "This project delivered modern apartment towers with strong structural systems, refined exteriors and community amenities.",
+    "image": "/project-residential.jpg",
+    "category": "Residential"
+  },
+  {
+    "slug": "corporate-business-campus",
+    "title": "Corporate Business Campus",
+    "location": "Bengaluru",
+    "summary": "A corporate campus built for flexibility, comfort and sustainability.",
+    "description": "The campus includes office buildings, collaboration spaces, and engineered systems for high-performance operations.",
+    "image": "/project-commercial.jpg",
+    "category": "Commercial"
+  },
+  {
+    "slug": "regional-highway-upgrade",
+    "title": "Regional Highway Upgrade",
+    "location": "Tamil Nadu",
+    "summary": "A strategic highway improvement project enhancing transport capacity and pavement life.",
+    "description": "This civil infrastructure project improved road quality, drainage and safety for regional connectivity.",
+    "image": "/project-infrastructure.jpg",
+    "category": "Infrastructure"
+  }
+]

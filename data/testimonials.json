@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Santhosh Menon",
+    "company": "Azure Developments",
+    "role": "Development Head",
+    "quote": "SAH Constructions delivered our prime residential tower with strong attention to detail and a smooth delivery experience.",
+    "rating": 5
+  },
+  {
+    "name": "Meena Reddy",
+    "company": "Civic Infrastructure Ltd.",
+    "role": "Project Director",
+    "quote": "Their team managed complex civil works efficiently and kept communication clear throughout the project.",
+    "rating": 5
+  }
+]
