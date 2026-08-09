@@ -38,14 +38,17 @@ export default function PageLoader() {
       }
     };
 
-    const onBeforeUnload = () => setVisible(true);
+    const onPopState = () => setVisible(false);
+    const onPageShow = () => setVisible(false);
 
     document.addEventListener('click', onClick);
-    window.addEventListener('beforeunload', onBeforeUnload);
+    window.addEventListener('popstate', onPopState);
+    window.addEventListener('pageshow', onPageShow);
 
     return () => {
       document.removeEventListener('click', onClick);
-      window.removeEventListener('beforeunload', onBeforeUnload);
+      window.removeEventListener('popstate', onPopState);
+      window.removeEventListener('pageshow', onPageShow);
     };
   }, []);
 

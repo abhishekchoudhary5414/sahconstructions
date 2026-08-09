@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   }
 
   const supabase = getSupabase();
-  const { error } = await supabase.from('contacts').insert([{ name, phone, message }]);
+  const { error } = await supabase.from('contacts').insert([{ name, phone, message, status: 'New' }]);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

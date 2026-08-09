@@ -1,0 +1,160 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: #f8fafc;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 3.5rem 1.5rem;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.02);
+  pointer-events: none;
+}
+
+.bgIcons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgIcon {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.12);
+  width: 6rem !important;
+  height: 6rem !important;
+  animation: floatIcon 7s ease-in-out infinite;
+}
+
+.bgIconOne { top: 8%; left: 6%; --icon-rotation: -12deg; animation-delay: 0s; }
+.bgIconTwo { top: 12%; right: 8%; --icon-rotation: 10deg; animation-delay: 1.2s; }
+.bgIconThree { bottom: 14%; left: 12%; --icon-rotation: 8deg; animation-delay: 2.4s; }
+.bgIconFour { bottom: 10%; right: 10%; --icon-rotation: -16deg; animation-delay: 3.6s; }
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) rotate(var(--icon-rotation)); }
+  50% { transform: translateY(-8px) rotate(calc(var(--icon-rotation) + 2deg)); }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(620px, 100%);
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.5rem;
+  box-shadow: 0 28px 72px rgba(15, 23, 42, 0.12);
+}
+
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.headerBlock {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.label {
+  margin: 0 0 0.8rem;
+  color: var(--primary-color);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.headerBlock h2 {
+  margin: 0 0 1rem;
+  color: var(--secondary-color);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.8;
+}
+
+.formCard {
+  margin-top: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field label {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.95rem;
+  background: #fff;
+  color: var(--secondary-color);
+  font: inherit;
+}
+
+.passwordField {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.togglePassword {
+  align-self: center;
+  justify-self: flex-end;
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error {
+  padding: 0.85rem 1rem;
+  border-radius: 0.95rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .inner {
+    padding: 2rem;
+  }
+}
