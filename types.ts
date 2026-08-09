@@ -53,6 +53,13 @@ export interface Project {
   industry: string;
   headquarters: string;
   established: string;
+  client: string;
+  status: string;
+  duration: string;
+  scope: string;
+  impact: string;
+  delivery: string;
+  process: string[];
   features: string[];
   externalUrl?: string;
 }
