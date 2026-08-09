@@ -100,9 +100,9 @@ export default async function DashboardPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {(enquiries ?? []).map((row: any) => (
+                    {(enquiries ?? []).map((row: any, index: number) => (
                       <tr key={row.id}>
-                        <td>{row.id}</td>
+                        <td>{index + 1}</td>
                         <td>{row.name || '-'}</td>
                         <td>{row.service || '-'}</td>
                         <td>{row.phone || '-'}</td>
@@ -130,9 +130,9 @@ export default async function DashboardPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {(whatsappClicks ?? []).map((row: any) => (
+                    {(whatsappClicks ?? []).map((row: any, index: number) => (
                       <tr key={row.id}>
-                        <td>{row.id}</td>
+                        <td>{index + 1}</td>
                         <td className={styles.mono}>{row.page_url || '-'}</td>
                         <td>{row.browser || '-'}</td>
                       </tr>
@@ -159,9 +159,9 @@ export default async function DashboardPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {(callClicks ?? []).map((row: any) => (
+                    {(callClicks ?? []).map((row: any, index: number) => (
                       <tr key={row.id}>
-                        <td>{row.id}</td>
+                        <td>{index + 1}</td>
                         <td className={styles.mono}>{row.page_url || '-'}</td>
                         <td>{row.browser || '-'}</td>
                       </tr>
@@ -188,9 +188,9 @@ export default async function DashboardPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {(contacts ?? []).map((row: any) => (
+                    {(contacts ?? []).map((row: any, index: number) => (
                       <tr key={row.id}>
-                        <td>{row.id}</td>
+                        <td>{index + 1}</td>
                         <td>{row.name || '-'}</td>
                         <td>{row.phone || '-'}</td>
                       </tr>
