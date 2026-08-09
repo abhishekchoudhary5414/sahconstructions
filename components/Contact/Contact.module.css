@@ -1,15 +1,48 @@
 .section {
+  position: relative;
   background: #fff;
   border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.bgIcons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgIcon {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.08);
+  width: 5.5rem !important;
+  height: 5.5rem !important;
+  animation: floatIcon 8s ease-in-out infinite;
+}
+
+.bgIconOne { top: 8%; left: 4%; --icon-rotation: -12deg; animation-delay: 0s; }
+.bgIconTwo { top: 14%; right: 6%; --icon-rotation: 12deg; animation-delay: 1.2s; }
+.bgIconThree { bottom: 12%; left: 10%; --icon-rotation: 8deg; animation-delay: 2.4s; }
+.bgIconFour { bottom: 8%; right: 10%; --icon-rotation: -16deg; animation-delay: 3.6s; }
+
+@keyframes floatIcon {
+  0% { transform: translateY(0) rotate(var(--icon-rotation)); }
+  50% { transform: translateY(-6px) rotate(calc(var(--icon-rotation) * 1.05)); }
+  100% { transform: translateY(0) rotate(var(--icon-rotation)); }
 }
 
 .inner {
-  max-width: 1160px;
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+}
+
+.headerBlock {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 2rem;
 }
 
 .label {
@@ -20,52 +53,156 @@
   font-size: 0.85rem;
 }
 
-.copy h2 {
+.headerBlock h2 {
   margin: 0 0 1rem;
   color: var(--secondary-color);
   font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.1;
 }
 
-.copy p {
-  margin: 0 0 1rem;
+.lead {
+  margin: 0;
   color: var(--muted-color);
   line-height: 1.8;
 }
 
-.details {
+.gridRow {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.details strong {
+.detailsColumn,
+.formColumn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+}
+
+.detailCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.06);
+  border-radius: 1rem;
+}
+
+.detailCard:last-child {
+  margin-bottom: 0;
+}
+
+.detailIcon {
+  min-width: 46px;
+  min-height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--primary-color);
+}
+
+.detailCard strong {
   display: block;
   margin-bottom: 0.35rem;
   color: var(--secondary-color);
 }
 
-.mapCard {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #f8fafc;
-  min-height: 280px;
+.detailCard p {
+  margin: 0;
+  color: var(--muted-color);
+  line-height: 1.75;
 }
 
-.mapPlaceholder {
+.field {
   display: grid;
-  place-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.field label {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: #fff;
+  color: var(--secondary-color);
+  font: inherit;
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mapRow {
+  display: grid;
+  gap: 1rem;
+}
+
+.mapCard {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  min-height: 380px;
+  border: 1px solid var(--border);
+}
+
+.mapIframe {
+  width: 100%;
   height: 100%;
-  color: var(--muted-color);
+  min-height: 380px;
+  border: 0;
+}
+
+.mapLink {
+  margin: 0;
+  text-align: center;
+}
+
+.mapLink a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 @media (max-width: 860px) {
-  .inner {
+  .gridRow {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 620px) {
-  .section {
+  .inner {
     padding: 2rem 1rem;
+  }
+
+  .detailsColumn,
+  .formColumn {
+    padding: 1.25rem;
   }
 }

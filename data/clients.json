@@ -1,22 +1,26 @@
 [
   {
-    "name": "Azure Developments",
-    "industry": "Real Estate",
-    "logo": "/client-azure.svg"
+    "name": "Alkem",
+    "industry": "Pharmaceutical Manufacturing Unit",
+    "logo": "/projects/logo/alkem.png",
+    "description": "Their expertise in pharma-grade construction was evident throughout. The facility meets all regulatory standards and supports seamless operations."
   },
   {
-    "name": "Civic Infrastructure Ltd.",
-    "industry": "Public Works",
-    "logo": "/client-civic.svg"
+    "name": "Lupin",
+    "industry": "Research & Development Campus",
+    "logo": "/projects/logo/lupin.png",
+    "description": "From lab design to energy efficiency, every detail was handled with precision. The campus fosters innovation and collaboration effortlessly."
   },
   {
-    "name": "Harbor Retail Parks",
-    "industry": "Retail",
-    "logo": "/client-harbor.svg"
+    "name": "Scorpion",
+    "industry": "Defense Technology Facility",
+    "logo": "/projects/logo/scorpion.png",
+    "description": "They delivered a secure, high-performance facility tailored to our strategic needs. Exceptional attention to detail and confidentiality."
   },
   {
-    "name": "Solaris Energy Hub",
-    "industry": "Energy",
-    "logo": "/client-solaris.svg"
+    "name": "NR Lab",
+    "industry": "Advanced Nanotech Lab",
+    "logo": "/projects/logo/nrlab.png",
+    "description": "The modular lab design and cleanroom integration exceeded expectations. A future-ready space that empowers cutting-edge research."
   }
 ]

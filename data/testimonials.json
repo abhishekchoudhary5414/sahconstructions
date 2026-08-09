@@ -1,16 +1,37 @@
 [
   {
-    "name": "Santhosh Menon",
-    "company": "Azure Developments",
-    "role": "Development Head",
-    "quote": "SAH Constructions delivered our prime residential tower with strong attention to detail and a smooth delivery experience.",
+    "name": "J. Sharma",
+    "company": "Residential Interiors",
+    "role": "Interior Designer",
+    "quote": "Their team collaborated on a residential interior project, delivering seamless gypsum ceiling installations and branded wall treatments that elevated the entire living space.",
     "rating": 5
   },
   {
-    "name": "Meena Reddy",
-    "company": "Civic Infrastructure Ltd.",
-    "role": "Project Director",
-    "quote": "Their team managed complex civil works efficiently and kept communication clear throughout the project.",
+    "name": "S. Tiwari",
+    "company": "Office Space",
+    "role": "Business Owner",
+    "quote": "Sah Constructions delivered a full-scale commercial renovation for our office space. Their execution—from structural modifications to interior detailing—was professional and efficient.",
+    "rating": 5
+  },
+  {
+    "name": "R.K. Singh",
+    "company": "Restaurant Build-Out",
+    "role": "Restaurant Manager",
+    "quote": "We partnered with Sah Constructions for our restaurant build-out. Their custom woodwork and partitioning showcased top-tier commercial craftsmanship and timely delivery.",
+    "rating": 5
+  },
+  {
+    "name": "A. Patel",
+    "company": "Hotel Lobby",
+    "role": "Hotel Director",
+    "quote": "Sah Constructions managed our hotel lobby upgrade with precision. Their ceiling paneling and decorative finishes were handled with expert project coordination and quality control.",
+    "rating": 5
+  },
+  {
+    "name": "R.K. Singh",
+    "company": "Restaurant Build-Out",
+    "role": "Restaurant Manager",
+    "quote": "We partnered with Sah Constructions for our restaurant build-out. Their custom woodwork and partitioning showcased top-tier commercial craftsmanship and timely delivery.",
     "rating": 5
   }
 ]

@@ -6,6 +6,7 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import type { Project } from '../../types';
+import companyData from '../../data/company.json';
 import styles from './Projects.module.css';
 
 interface ProjectsProps {
@@ -91,6 +92,19 @@ export default function Projects({ projects, showLoadMore = true }: ProjectsProp
               </div>
               <div className={styles.cardFooter}>
                 <a className={styles.link} href={`/projects/${project.slug}`}>View project</a>
+                <a
+                  className={styles.whatsappLink}
+                  href={`https://wa.me/${companyData.phone.replace(/\D/g, '')}?text=${encodeURIComponent(
+                    `Hello SAH Constructions, I am interested in the ${project.title}. Please share pricing and availability details.`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp enquiry
+                </a>
+                <a className={styles.secondaryLink} href={`/enquiry?project=${encodeURIComponent(project.title)}`}>
+                  Enquiry now
+                </a>
               </div>
             </div>
           </article>

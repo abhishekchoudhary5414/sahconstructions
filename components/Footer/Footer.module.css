@@ -1,37 +1,164 @@
 .footer {
   border-top: 1px solid var(--border);
   background: #fff;
+  padding: 3rem 0 1.5rem;
 }
 
-.inner {
-  max-width: 1160px;
+.primary {
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.brandBlock {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.logoWrap {
+  width: 150px;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.brandContent {
+  display: grid;
+  gap: 0.65rem;
 }
 
 .brand {
-  margin: 0 0 0.65rem;
+  margin: 0;
+  color: var(--secondary-color);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.address {
+  margin: 0.3rem 0 0;
+  color: var(--muted-color);
+  line-height: 1.7;
+}
+
+.linkGroups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.linkColumn {
+  gap: 0.75rem;
+}
+
+.groupLabel {
+  margin: 0 0 0.85rem;
   color: var(--secondary-color);
   font-weight: 700;
 }
 
 .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  gap: 0.45rem;
 }
 
-.links a {
+.link {
+  display: block;
   color: var(--muted-color);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.15rem 0;
+}
+
+.link:hover {
+  color: var(--primary-color);
+  transform: translateX(2px);
+}
+
+
+
+.secondary {
+  max-width: 1240px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  color: var(--muted-color);
+  font-size: 0.95rem;
+}
+
+.poweredLink {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.poweredLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .primary {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 720px) {
-  .inner {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .primary,
+  .secondary {
+    padding: 0 1rem;
+  }
+
+  .brandBlock {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .logoWrap {
+    width: 84px;
+    height: 84px;
+  }
+
+  .linkGroups {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .links,
+  .contactInfo {
+    gap: 0.5rem;
+  }
+
+  .groupLabel {
+    margin-bottom: 0.5rem;
+  }
+
+  .link {
+    padding: 0.2rem 0;
+  }
+
+  .secondary {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }

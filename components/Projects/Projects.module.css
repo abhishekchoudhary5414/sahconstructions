@@ -223,25 +223,57 @@
 }
 
 .cardFooter {
-  display: flex;
-  align-items: center;
+  display: grid;
   gap: 0.9rem;
 }
 
-.link {
+.link,
+.secondaryLink,
+.whatsappLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 38px;
   padding: 0.62rem 1rem;
   border-radius: 999px;
-  color: #fff;
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
   font-weight: 800;
   font-size: 0.78rem;
   text-decoration: none;
   transition: all 180ms ease;
+}
+
+.link {
+  color: #fff;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.link:hover {
+  color: #fff;
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.secondaryLink {
+  color: var(--secondary-color);
+  background: #fff;
+  border: 1px solid var(--secondary-color);
+}
+
+.secondaryLink:hover {
+  color: #fff;
+  background: var(--secondary-color);
+}
+
+.whatsappLink {
+  color: #fff;
+  background: linear-gradient(135deg, #16a34a, #10b981);
+  border: 1px solid #10b981;
+}
+
+.whatsappLink:hover {
+  background: #128a3b;
+  border-color: #0f9b44;
 }
 
 .link:hover {
