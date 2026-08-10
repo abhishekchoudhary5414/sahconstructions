@@ -248,14 +248,100 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding: 3rem 0 1.5rem;
+    padding: 2.5rem 0 1.25rem;
   }
 
   .inner {
     padding: 0 1rem;
   }
 
+  .bgIcon {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .bgIconOne { top: 5%; left: -1rem; }
+  .bgIconTwo { top: 12%; right: -1rem; }
+  .bgIconThree { bottom: 8%; left: 2%; }
+  .bgIconFour { bottom: 4%; right: 2%; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+    line-height: 1.12;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .infoPanel {
+    padding-top: 1.25rem;
+  }
+
+  .infoGrid,
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .infoCard,
+  .aboutCard {
+    padding: 1.15rem;
+    border-radius: 1rem;
+  }
+
+  .aboutPanel {
+    padding: 1.25rem 0 2rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .posts {
+    padding: 2rem 0 3rem;
+  }
+
+  .card {
+    border-radius: 1.15rem;
+  }
+
+  .imageWrapper {
+    height: clamp(160px, 45vw, 220px);
+  }
+
+  .cardBody {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .cardFooter {
+    justify-content: stretch;
+  }
+
+  .readMore {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .inner {
+    padding: 0 0.75rem;
+  }
+
+  .label {
+    font-size: 0.72rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .cardMeta {
+    gap: 0.5rem;
+    font-size: 0.8rem;
   }
 }
