@@ -5,7 +5,10 @@ import EnquiryPage from '../../components/EnquiryPopup/EnquiryPage';
 
 export const metadata: Metadata = {
   title: 'Enquiry | SAH Constructions',
-  description: 'Get in touch with SAH Constructions for your next construction project.'
+  description: 'Get in touch with SAH Constructions for your next construction project.',
+  alternates: {
+    canonical: 'https://www.sahconstructions.com/enquiry',
+  },
 };
 
 export default function EnquiryRoutePage() {

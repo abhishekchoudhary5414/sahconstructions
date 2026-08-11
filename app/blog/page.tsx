@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -96,7 +97,7 @@ export default function BlogPage() {
               {blogsData.map((post) => (
                 <article key={post.id} className={styles.card}>
                   <div className={styles.imageWrapper}>
-                    <img src={post.image} alt={post.title} />
+                    <Image src={post.image} alt={post.title} className={styles.image} width={500} height={300} />
                     <span className={styles.tag}>{post.category}</span>
                   </div>
                   <div className={styles.cardBody}>

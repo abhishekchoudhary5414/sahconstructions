@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -35,10 +37,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const work = getWork(params.slug);
 
   if (!work) {
-    return {
-      title: 'Work not found | SAH Constructions',
-      description: 'The requested construction work could not be found.'
-    };
+    notFound();
+  }
+
+  if (params.city && !getCityBySlug(params.city)) {
+    notFound();
   }
 
   const city = getCityBySlug(params.city);
@@ -62,19 +65,11 @@ export default function WorkDetail({ params }: PageProps) {
   const work = getWork(params.slug);
 
   if (!work) {
-    return (
-      <>
-        <Navbar />
-        <main className={styles.page}>
-          <div className={styles.notFoundWrap}>
-            <h1>Work not found</h1>
-            <p>The requested work could not be found.</p>
-            <a className={styles.primaryCta} href="/works">Back to works</a>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    notFound();
+  }
+
+  if (params.city && !getCityBySlug(params.city)) {
+    notFound();
   }
 
   const city = getCityBySlug(params.city);
@@ -105,7 +100,7 @@ export default function WorkDetail({ params }: PageProps) {
             <section className={styles.detailLayout}>
               <aside className={styles.imagePanel}>
                 <div className={styles.mediaWrap}>
-                  <img src={work.image} alt={work.title} className={styles.workImage} />
+                  <Image src={work.image} alt={work.title} className={styles.workImage} width={1200} height={800} />
                   <div className={styles.imageOverlay}>
                     <span>{work.title}</span>
                     <strong>{cityTitle}</strong>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../app/globals.css';
+import './globals.css';
 import PageLoader from '../components/PageLoader/PageLoader';
 import companyData from '../data/company.json';
 
@@ -169,8 +169,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@graph': [
       {
         '@type': 'Organization',
+        '@id': `${company.website}#organization`,
         name: company.name,
         url: company.website,
+        logo: `${company.website}/logo/circlelogo.png`,
         telephone: company.phone,
         email: company.email,
         address: {
@@ -179,16 +181,52 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           addressLocality: company.address.city,
           addressRegion: company.address.region,
           postalCode: company.address.postalCode,
-          addressCountry: company.address.country
-        }
+          addressCountry: company.address.country,
+        },
+        sameAs: [company.website],
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${company.website}#localbusiness`,
+        name: company.name,
+        description: company.description,
+        url: company.website,
+        telephone: company.phone,
+        email: company.email,
+        image: `${company.website}/logo/circlelogo.png`,
+        logo: `${company.website}/logo/circlelogo.png`,
+        priceRange: 'Varies',
+        areaServed: 'India',
+        openingHours: company.hours,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: company.address.street,
+          addressLocality: company.address.city,
+          addressRegion: company.address.region,
+          postalCode: company.address.postalCode,
+          addressCountry: company.address.country,
+        },
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: company.phone,
+            contactType: 'customer service',
+            areaServed: 'IN',
+            availableLanguage: ['English'],
+          },
+        ],
       },
       {
         '@type': 'WebSite',
+        '@id': `${company.website}#website`,
         url: company.website,
         name: company.name,
-        description: company.description
-      }
-    ]
+        description: company.description,
+        publisher: {
+          '@id': `${company.website}#organization`,
+        },
+      },
+    ],
   };
 
   return (

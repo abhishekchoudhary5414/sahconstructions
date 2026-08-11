@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -74,9 +75,9 @@ export default function Projects({ projects, showLoadMore = true }: ProjectsProp
         {visibleProjects.map((project) => (
           <article key={project.slug} className={styles.card}>
             <div className={styles.media}>
-              <img src={project.image} alt={project.title} className={styles.image} />
+              <Image src={project.image} alt={project.title} className={styles.image} width={600} height={360} />
               <div className={styles.logoWrap}>
-                <img src={project.logo} alt={`${project.title} logo`} className={styles.logo} />
+                <Image src={project.logo} alt={`${project.title} logo`} className={styles.logo} width={50} height={50} />
               </div>
             </div>
             <div className={styles.body}>

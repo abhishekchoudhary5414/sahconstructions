@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -24,10 +26,7 @@ function getProject(slug: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const project = getProject(params.slug);
   if (!project) {
-    return {
-      title: 'Project not found | SAH Constructions',
-      description: 'The requested project could not be found.'
-    };
+    notFound();
   }
 
   return {
@@ -43,19 +42,7 @@ export default function ProjectDetail({ params }: PageProps) {
   const project = getProject(params.slug);
 
   if (!project) {
-    return (
-      <>
-        <Navbar />
-        <main className={styles.page}>
-          <div className={styles.notFoundWrap}>
-            <h1>Project not found</h1>
-            <p>The requested project could not be found.</p>
-            <a className={styles.primaryCta} href="/projects">Back to projects</a>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    notFound();
   }
 
   const whatsappMessage = `Hello SAH Constructions, I would like to enquire about the ${project.title} project.`;
@@ -83,7 +70,7 @@ export default function ProjectDetail({ params }: PageProps) {
             <section className={styles.detailLayout}>
               <aside className={styles.imagePanel}>
                 <div className={styles.mediaWrap}>
-                  <img src={project.image} alt={project.title} className={styles.projectImage} />
+                  <Image src={project.image} alt={project.title} className={styles.projectImage} width={1200} height={800} />
                   <div className={styles.imageOverlay}>
                     <span>{project.category}</span>
                     <strong>{project.location}</strong>
@@ -102,7 +89,7 @@ export default function ProjectDetail({ params }: PageProps) {
                 <div className={styles.projectHeader}>
                   <span className={styles.label}>Project overview</span>
                   <div className={styles.logoRow}>
-                    <img src={project.logo} alt={`${project.title} logo`} className={styles.logo} />
+                    <Image src={project.logo} alt={`${project.title} logo`} className={styles.logo} width={66} height={66} />
                     <span className={styles.status}>{project.status}</span>
                   </div>
                   <h1>{project.title}</h1>

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import companyData from '../../../data/company.json';
 import equipmentData from '../../../data/equipment.json';
@@ -18,7 +20,7 @@ function getEquipment(slug: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const item = getEquipment(params.slug);
   if (!item) {
-    return { title: 'Equipment not found | SAH Constructions', description: 'The requested item could not be found.' };
+    notFound();
   }
 
   return {
@@ -32,19 +34,7 @@ export default function EquipmentDetail({ params }: PageProps) {
   const item = getEquipment(params.slug);
 
   if (!item) {
-    return (
-      <>
-        <Navbar />
-        <main className={styles.page}>
-          <div className={styles.notFoundWrap}>
-            <h1>Equipment not found</h1>
-            <p>The requested equipment could not be found.</p>
-            <a className={styles.primaryCta} href="/equipment">Back to equipment</a>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    notFound();
   }
 
   const whatsappMessage = `Hello SAH Constructions, I would like to enquire about the ${item.title}.`;
@@ -65,7 +55,7 @@ export default function EquipmentDetail({ params }: PageProps) {
             <section className={styles.detailLayout}>
               <aside className={styles.imagePanel}>
                 <div className={styles.mediaWrap}>
-                  <img src={item.image} alt={item.title} className={styles.itemImage} />
+                  <Image src={item.image} alt={item.title} className={styles.itemImage} width={1200} height={800} />
                   <div className={styles.imageOverlay}>
                     <span>{item.category}</span>
                     <strong>{item.manufacturer}</strong>

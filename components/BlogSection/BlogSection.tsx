@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { BlogPost } from '../../types';
 import styles from './BlogSection.module.css';
@@ -22,7 +23,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
           {posts.map((post) => (
             <article key={post.id} className={styles.card}>
               <div className={styles.imageWrapper}>
-                <img src={post.image} alt={post.title} />
+                <Image src={post.image} alt={post.title} className={styles.image} width={500} height={300} />
                 <span className={styles.category}>{post.category}</span>
               </div>
 

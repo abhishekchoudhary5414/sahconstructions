@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import type { EquipmentItem } from '../../types';
 import ConstructionIcon from '@mui/icons-material/Construction';
@@ -65,7 +66,7 @@ export default function Equipment({ equipment, showLoadMore = true }: EquipmentP
         {visibleItems.map((item) => (
           <article key={item.slug} className={styles.card}>
             <div className={styles.media}>
-              <img src={item.image} alt={item.title} className={styles.image} />
+              <Image src={item.image} alt={item.title} className={styles.image} width={600} height={360} />
               {/* <div className={styles.logoWrap}>
                 <span className={styles.category}>{item.category}</span>
               </div> */}

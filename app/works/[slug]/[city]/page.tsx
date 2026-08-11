@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -33,20 +35,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const work = getWork(params.slug);
 
   if (!work) {
-    return {
-      title: 'Work not found | SAH Constructions',
-      description: 'The requested construction work could not be found.'
-    };
+    notFound();
   }
 
   const city = getCityBySlug(params.city);
-  const cityTitle = city ? `${city.city}, ${city.state}, ${city.country}` : 'India';
+  if (!city) {
+    notFound();
+  }
+
+  const cityTitle = `${city.city}, ${city.state}, ${city.country}`;
 
   return {
     title: `${work.title} in ${cityTitle} | SAH Constructions`,
     description: `${work.summary} SAH Constructions is delivering ${work.title.toLowerCase()} across ${cityTitle}.`,
     alternates: {
-      canonical: `https://www.sahconstructions.com/works/${work.slug}/${normalizeCitySlug(city ? city.city : params.city)}`
+      canonical: `https://www.sahconstructions.com/works/${work.slug}/${normalizeCitySlug(city.city)}`
     }
   };
 }
@@ -55,23 +58,15 @@ export default function WorkCityDetail({ params }: PageProps) {
   const work = getWork(params.slug);
 
   if (!work) {
-    return (
-      <>
-        <Navbar />
-        <main className={styles.page}>
-          <div className={styles.notFoundWrap}>
-            <h1>Work not found</h1>
-            <p>The requested work could not be found.</p>
-            <a className={styles.primaryCta} href="/works">Back to works</a>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    notFound();
   }
 
   const city = getCityBySlug(params.city);
-  const cityTitle = city ? `${city.city}, ${city.state}, ${city.country}` : 'India';
+  if (!city) {
+    notFound();
+  }
+
+  const cityTitle = `${city.city}, ${city.state}, ${city.country}`;
 
   const whatsappMessage = `Hello SAH Constructions, I would like to enquire about ${work.title} in ${cityTitle}.`;
   const whatsappUrl = `https://wa.me/${companyData.phone.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -100,7 +95,7 @@ export default function WorkCityDetail({ params }: PageProps) {
             <section className={styles.detailLayout}>
               <aside className={styles.imagePanel}>
                 <div className={styles.mediaWrap}>
-                  <img src={work.image} alt={work.title} className={styles.workImage} />
+                  <Image src={work.image} alt={work.title} className={styles.workImage} width={1200} height={800} />
                   <div className={styles.imageOverlay}>
                     <span>{work.title}</span>
                     <strong>{cityTitle}</strong>

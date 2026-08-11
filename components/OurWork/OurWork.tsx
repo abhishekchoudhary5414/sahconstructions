@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Work } from '../../types';
 import styles from './OurWork.module.css';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
@@ -39,7 +40,7 @@ export default function OurWork({ works }: OurWorkProps) {
             return (
               <article key={work.slug} className={`${styles.workRow} ${reverse ? styles.reverse : ''}`}> 
                 <div className={styles.imageWrap}>
-                  <img src={work.image} alt={work.title} className={styles.workImage} />
+                  <Image src={work.image} alt={work.title} className={styles.workImage} width={900} height={540} />
                 </div>
 
                 <div className={styles.copyWrap}>

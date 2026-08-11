@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ConstructionIcon from '@mui/icons-material/Construction';
@@ -49,6 +50,62 @@ export default function BlogDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': `https://www.sahconstructions.com/blog/${post.id}#blogposting`,
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': `https://www.sahconstructions.com/blog/${post.id}`,
+        },
+        headline: post.title,
+        description: post.excerpt,
+        image: [post.image],
+        author: {
+          '@type': 'Organization',
+          name: post.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: companyData.name,
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.sahconstructions.com/logo/circlelogo.png',
+          },
+        },
+        datePublished: post.date,
+        dateModified: post.date,
+        articleSection: post.category,
+        keywords: post.keywords,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.sahconstructions.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://www.sahconstructions.com/blog',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: `https://www.sahconstructions.com/blog/${post.id}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
       <Navbar />
@@ -76,7 +133,7 @@ export default function BlogDetailPage({ params }: PageProps) {
         <article className={styles.contentShell}>
           <div className={styles.inner}>
             <div className={styles.topImage}>
-              <img src={post.image} alt={post.title} />
+              <Image src={post.image} alt={post.title} className={styles.topImageImage} width={1200} height={700} />
             </div>
             <div className={styles.textBlock}>
               {post.content.split('\n\n').map((paragraph) => (
